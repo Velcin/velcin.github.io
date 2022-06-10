@@ -1,0 +1,39 @@
+I am Professor of Computer Science at the [University Lyon 2](https://www.univ-lyon2.fr), member of the Data Mining & Decision team of the [ERIC Lab](https://eric.msh-lse.fr/en/) and teacher at the [Institute of Communication (ICOM)](https://icom.univ-lyon2.fr).
+
+**contact:** julien.velcin + domain name (univ-lyon2.fr)   
+**phone:** (0) 478 772 414 - fax: (0) 478 772 375   
+**office:** ERIC Lab, bureau K198 - 5 av. Pierre Mendès-France - 69676 Bron Cedex, France   
+
+# Research topics
+
+- artificial intelligence
+- machine learning
+- data mining
+- natural langage processing
+- social media analysis
+- digital humanities
+
+# Publications
+
+[DBLP](https://dblp.org/pid/87/1950.html)   
+[Google scholar](https://scholar.google.fr/citations?user=_ZreLBMAAAAJ&hl=en)   
+
+# Current research projects:
+
+- DIKé (2022-2026) : Bias, fairness and ethics of compressed NLP models
+- POIVRE (2021-2022) : Viewpoint detection on information networks
+- TIGA (2020-2023): L’industrie [Re]connectée et intégrée à son territoire et à ses habitants.
+- LIFRANUM (2020-2023): identify and structure the corpus of digital French literatures
+
+# Teaching
+
+I give basic classes on computer science (e.g., excel, database, programming) and more advanced classes in data mining (e.g., machine learning, artificial intelligence, text mining). All my lectures are complemented by practical projects using various languages (java, R, python).
+
+# Service
+
+- Coordinator of the Master degree of Computer Science, University of Lyon 2
+- Head of the Bachelor's degree program in Data Science, University of Lyon 2 
+- Coordinator of the Pôle HuNIS, University of Lyon 2
+- Member (elected) of the Administrative Board of ICOM, University of Lyon 2 
+- Member of the executive committee of IXXI
+- Member of PCs: IJCAI (SPC), NeurIPS, AAAI, ICLR, ARR (ACL, EMNLP...), ECAI, ECIR, LREC, EGC, CORIA/CIRCLE
