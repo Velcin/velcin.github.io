@@ -288,16 +288,6 @@ small {
   font-size:12px;
 }
 
-picture {
-  width: 283px;
-  margin-left:-640px;
-  position: fixed;
-  top: 220px;
-  text-align: right;
-  background-image: url(/images/profile.jpg);
-  background-repeat: no-repeat;
-}
-
 nav {
   width: 283px;
   position: fixed;
@@ -305,6 +295,12 @@ nav {
   left:50%;
   margin-left:-640px;
   color: #eeccaa;
+
+  picture {
+  width: 283px;
+  background-image: url(/images/profile.jpg);
+  background-repeat: no-repeat;
+  }  
 
   ul {
     list-style: none;
