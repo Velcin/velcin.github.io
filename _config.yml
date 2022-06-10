@@ -5,4 +5,5 @@ description              : &description "Professor of Computer Science at the Un
 profile_picture          : http://scidolyse.ens-lyon.fr/sites/default/files/styles/medium/public/2019-02/julienvelcin.jpg 
 
 #theme: jekyll-theme-minimal
-theme: jekyll-theme-cayman
+#theme: jekyll-theme-cayman
+theme: jekyll-theme-leap-day
