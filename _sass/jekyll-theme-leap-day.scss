@@ -291,6 +291,7 @@ small {
 .img_pic {
   border-radius: 50%;
   width: 120px;
+  left:40px;
 }
 
 nav {
@@ -300,11 +301,6 @@ nav {
   left:50%;
   margin-left:-640px;
   color: #eeccaa;
-
-  #picture {
-  background-image: url(/images/profile.jpg);
-  background-repeat: no-repeat;
-  }  
 
   ul {
     list-style: none;
