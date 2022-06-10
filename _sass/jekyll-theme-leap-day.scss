@@ -289,7 +289,7 @@ small {
 }
 
 nav {
-  width: 300px;
+  width: 283px;
   position: fixed;
   top: 220px;
   left:50%;
@@ -297,6 +297,7 @@ nav {
   color: #eeccaa;
   text-align: right;
   background-image: url(/images/profile.jpg);
+  background-repeat: no-repeat;
 
   ul {
     list-style: none;
