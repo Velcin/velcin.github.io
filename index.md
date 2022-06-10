@@ -29,7 +29,7 @@ I am Professor of Computer Science at the [University Lyon 2](https://www.univ-l
 
 # Teaching
 
-I give basic classes on computer science (e.g., excel, database, programming) and more advanced classes in data mining (e.g., machine learning, artificial intelligence, text mining). All my lectures are complemented by practical projects using various languages (java, R, python).
+I give basic classes on computer science (e.g., programming) and more advanced classes in data science (e.g., artificial intelligence, machine learning, NLP). All my lectures are complemented by practical projects using various languages (python, R, C++).
 
 # Service
 
