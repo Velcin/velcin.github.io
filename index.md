@@ -1,6 +1,6 @@
 I am Professor of Computer Science at the [University Lyon 2](https://www.univ-lyon2.fr), member of the Data Mining & Decision team of the [ERIC Lab](https://eric.msh-lse.fr/en/) and teacher at the [Institute of Communication (ICOM)](https://icom.univ-lyon2.fr).
 
-**contact:** julien.velcin + domain name (univ-lyon2.fr)   
+**contact:** julien.velcin + domain name
 <!-- **phone:** (0) 478 772 414 - fax: (0) 478 772 375   -->
 **office:** ERIC Lab, bureau K198 - 5 av. Pierre Mendès-France - 69676 Bron Cedex, France   
 
