@@ -11,7 +11,7 @@ I am Professor of Computer Science at the [University Lyon 2](https://www.univ-l
 - artificial intelligence
 - machine learning
 - data mining
-- natural langage processing
+- natural language processing
 - social media analysis
 - digital humanities
 
