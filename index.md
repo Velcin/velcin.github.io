@@ -25,7 +25,7 @@ I am Professor of Computer Science at the [University Lyon 2](https://www.univ-l
 - **DIKé** (2022-2026) : Bias, fairness and ethics of compressed NLP models
 - **POIVRE** (2021-2022) : Viewpoint detection on information networks
 - **TIGA** (2020-2023): L’industrie [Re]connectée et intégrée à son territoire et à ses habitants.
-- **LIFRANUM** (2020-2023): identify and structure the corpus of digital French literatures
+- [**LIFRANUM**](https://marge.univ-lyon3.fr/projet-lifranum) (2020-2023): identify and structure the corpus of digital French literatures
 
 # Teaching
 
@@ -33,9 +33,9 @@ I give basic classes on computer science (e.g., excel, database, programming) an
 
 # Service
 
-- Coordinator of the Master degree of Computer Science, University of Lyon 2
+- Coordinator of the [Master of Computer Science](https://icom.univ-lyon2.fr/formation/filiere-informatique-statistique), University of Lyon 2
 - Head of the Bachelor's degree program in Data Science, University of Lyon 2 
-- Coordinator of the Pôle HuNIS, University of Lyon 2
+- Coordinator of the [Pôle HuNIS](https://www.univ-lyon2.fr/universite/les-poles-de-specialites/pole-hunis), University of Lyon 2
 - Member (elected) of the Administrative Board of ICOM, University of Lyon 2 
-- Member of the executive committee of IXXI
+- Member of the executive committee of [IXXI](http://www.ixxi.fr)
 - Member of PCs: IJCAI (SPC), NeurIPS, AAAI, ICLR, ARR (ACL, EMNLP...), ECAI, ECIR, LREC, EGC, CORIA/CIRCLE
