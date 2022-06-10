@@ -13,7 +13,7 @@ body {
   font-weight:300;
   margin: 0px;
   padding:0px 0 20px 0px;
-  background: #ffdcbf;
+  background: #edd5c0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -55,7 +55,7 @@ a {
 
 a small {
   font-size:11px;
-  color:#666;
+  color:#e84242;
   margin-top:-0.6em;
   display:block;
 }
@@ -315,7 +315,7 @@ nav {
 
         a {
           font-weight: bold;
-          color: #333;
+          color: #e84242;
         }
 
         + .tag-h2 {
@@ -332,7 +332,7 @@ nav {
     }
 
     a {
-      color: #666;
+      color: #e84242;
 
       &:hover { color: #999; }
     }
