@@ -20,7 +20,7 @@ I am Professor of Computer Science at the [University Lyon 2](https://www.univ-l
 [DBLP](https://dblp.org/pid/87/1950.html)   
 [Google scholar](https://scholar.google.fr/citations?user=_ZreLBMAAAAJ&hl=en)   
 
-# Projects:
+# Projects
 
 - **DIKé** (2022-2026) : Bias, fairness and ethics of compressed NLP models
 - **POIVRE** (2021-2022) : Viewpoint detection on information networks
