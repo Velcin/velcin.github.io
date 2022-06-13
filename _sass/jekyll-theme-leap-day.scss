@@ -115,9 +115,10 @@ table {
   width:100%;
   border-collapse:collapse;
   border: none;
+  color: #000000;
 }
 
-th {
+/*th {
   text-align:left;
   padding:5px 10px;
   border-bottom:1px solid #e5e5e5;
@@ -141,7 +142,7 @@ hr {
   height: 11px;
   background: transparent url('../images/hr.gif') center center repeat-x;
   margin: 0 0 20px;
-}
+}*/
 
 dt {
   color:#444;
