@@ -27,15 +27,15 @@ I am Professor of Computer Science at the [University Lyon 2](https://www.univ-l
 - **TIGA** (2020-2023): L’industrie [Re]connectée et intégrée à son territoire et à ses habitants.
 - **LIFRANUM** (ANR, 2020-2023): identify and structure the corpus of digital French literatures ([website](https://marge.univ-lyon3.fr/projet-lifranum))
 
+# Recent talks
+
+- At the frontier of unsupervised and supervised learning, May 19th, MASHS-2022 Paris: [slides](/talks/talk-samm.pdf)
+- Different ways for modeling time with textual data, April 6th, Centre Marc Bloch (Berlin): [slides](/talks/talk-mbloch.pdf)
+- Recent advances in information network embedding @ERIC, Feb 18th, Wordline (Lyon): [slides](/talks/talk-wordline.pdf)
+
 # Teaching
 
 I give basic classes on computer science (e.g., programming) and more advanced classes in data science (e.g., artificial intelligence, machine learning, NLP). All my lectures are complemented by practical projects using various languages (python, R, C++).
-
-# Talks
-
-- At the frontier of unsupervised and supervised learning, May 19th, [MASHS-2022](https://samm.univ-paris1.fr/MASHS-2022): [slides](/talks/talk-samm.pdf)
-- Different ways for modeling time with textual data
-
 
 # Service
 
