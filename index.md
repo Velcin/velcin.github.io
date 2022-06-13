@@ -31,6 +31,12 @@ I am Professor of Computer Science at the [University Lyon 2](https://www.univ-l
 
 I give basic classes on computer science (e.g., programming) and more advanced classes in data science (e.g., artificial intelligence, machine learning, NLP). All my lectures are complemented by practical projects using various languages (python, R, C++).
 
+# Talks
+
+- At the frontier of unsupervised and supervised learning, May 19th, [MASHS-2022](https://samm.univ-paris1.fr/MASHS-2022): [slides](/talks/talk-samm.pdf)
+- Different ways for modeling time with textual data
+
+
 # Service
 
 - Coordinator of the [Master of Computer Science](https://icom.univ-lyon2.fr/formation/filiere-informatique-statistique), University of Lyon 2
