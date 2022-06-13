@@ -29,7 +29,7 @@ I am Professor of Computer Science at the [University Lyon 2](https://www.univ-l
 
 # Recent talks
 
-- At the frontier of unsupervised and supervised learning, May 19th, MASHS-2022 Paris: [slides](/talks/talk-samm.pdf)
+- At the frontier of unsupervised and supervised learning, May 19th, MASHS-2022 (Paris): [slides](/talks/talk-samm.pdf)
 - Different ways for modeling time with textual data, April 6th, Centre Marc Bloch (Berlin): [slides](/talks/talk-mbloch.pdf)
 - Recent advances in information network embedding @ERIC, Feb 18th, Wordline (Lyon): [slides](/talks/talk-wordline.pdf)
 
