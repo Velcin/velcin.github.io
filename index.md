@@ -2,7 +2,7 @@
 
 I am Professor of Computer Science at the [University Lyon 2](https://www.univ-lyon2.fr), member of the Data Mining & Decision team of the [ERIC Lab](https://eric.msh-lse.fr/en/) and teacher at the [Institute of Communication (ICOM)](https://icom.univ-lyon2.fr).
 
-**contact:** julien.velcin + domain name   
+**contact:** julien.velcin@univ-lyon2.fr   
 <!-- **phone:** (0) 478 772 414 - fax: (0) 478 772 375   -->
 **office:** ERIC Lab, bureau K198 - 5 av. Pierre Mendès-France - 69676 Bron Cedex, France   
 
@@ -38,4 +38,4 @@ I give basic classes on computer science (e.g., programming) and more advanced c
 - Coordinator of the [Pôle HuNIS](https://www.univ-lyon2.fr/universite/les-poles-de-specialites/pole-hunis), University of Lyon 2
 - Member (elected) of the Administrative Board of ICOM, University of Lyon 2 
 - Member of the executive committee of [IXXI](http://www.ixxi.fr), co-organizer of the seminar cycle [AI & language](http://www.ixxi.fr/seminaires/cycles-de-seminaires/intelligence-artificielle-et-langage?set_language=en&cl=en)
-- Member of PCs: IJCAI (SPC), NeurIPS, AAAI, ICLR, ARR (ACL, EMNLP...), ECAI, ECIR, LREC, EGC, CORIA/CIRCLE
+- Member of conference PCs: IJCAI (SPC), NeurIPS, AAAI, ICLR, ARR (ACL, EMNLP...), ECAI, ECIR, LREC, EGC, CORIA/CIRCLE
