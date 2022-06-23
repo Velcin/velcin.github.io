@@ -1,6 +1,6 @@
 # Julien Velcin
 
-I am Professor of Computer Science at the [University Lyon 2](https://www.univ-lyon2.fr), member of the Data Mining & Decision team of the [ERIC Lab](https://eric.msh-lse.fr/en/) and teacher at the [Institute of Communication (ICOM)](https://icom.univ-lyon2.fr).
+Professor of Computer Science at the [University Lyon 2](https://www.univ-lyon2.fr), member of the Data Mining & Decision team of the [ERIC Lab](https://eric.msh-lse.fr/en/) and teacher at the [Institute of Communication (ICOM)](https://icom.univ-lyon2.fr).
 
 **contact:** julien.velcin@univ-lyon2.fr   
 <!-- **phone:** (0) 478 772 414 - fax: (0) 478 772 375   -->
