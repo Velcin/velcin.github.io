@@ -32,7 +32,7 @@ Professor of Computer Science at the [University Lyon 2](https://www.univ-lyon2.
 - Observatoire du discours parlementaire : développer de nouveaux outils de TAL et les mettre à la disposition du grand public (Lyon), July 12th, Atelier MADONA au symposium MaDICS (Lyon): [slides](https://velcin.github.io/talks/pres_nada.pdf)
 - At the frontier of unsupervised and supervised learning, May 19th, MASHS-2022 (Paris): [slides](https://velcin.github.io/talks/talk-samm.pdf)
 - Different ways for modeling time with textual data, April 6th, Centre Marc Bloch (Berlin): [slides](https://velcin.github.io/talks/talk-mbloch.pdf)
-- Recent advances in information network embedding @ERIC, Feb 18th, Wordline (Lyon): [slides](/https://velcin.github.iotalks/talk-wordline.pdf)
+- Recent advances in information network embedding @ERIC, Feb 18th, Wordline (Lyon): [slides](https://velcin.github.iotalks/talk-wordline.pdf)
 
 # Teaching
 
