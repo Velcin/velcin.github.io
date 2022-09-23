@@ -1,0 +1,13 @@
+Encadrant : Julien Velcin
+
+Titre : observatoire des débats parlementaires
+
+Sujet :
+
+L’objectif général du projet est de mettre à jour les structures du débat politique institutionnel, les visions de société qui s’élaborent et s’affrontent au Parlement. Ce type d'analyse pourrait s'avérer très utile dans le contexte actuel de recomposition politique pour des publics divers (journalistes, citoyens, scientifiques). Elle leur permettrait ainsi de mieux comprendre les dynamiques de cette institution. Des projets précédents existent mais ils mobilisent souvent des analyses uniquement qualitatives ou alors des analyses de réseau. L'idée ici  est de recourir à des techniques d'analyse automatique du contenu textuel, autrement appelé Traitement Automatique de la Langue (ou Natural Language Processing en anglais). Des essais préliminaires utilisent des modèles thématiques afin d'extraire de *quoi* parlent les débats et ils permettent déjà d'obtenir des résultats très intéressants. L'objectif de ce projet d'initiation à la recherche serait d'étudier les travaux qui utilisent ces thématiques pour essayer de caractériser le discours, comme ça a été fait par exemple par Gautrais et al. avec le concept de signature, et si possible de les tester sur les données des débats parlementaires.
+
+Références :
+Clément Gautrais, Peggy Cellier, René Quiniou, Alexandre Termier:
+Topic Signatures in Political Campaign Speeches. EMNLP 2017: 2342-2347
+https://hal.archives-ouvertes.fr/hal-01640498/document
+https://allgo18.inria.fr/apps/skysignature-patterns
