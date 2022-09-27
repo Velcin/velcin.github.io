@@ -40,8 +40,7 @@ I give basic classes on computer science (e.g., programming) and more advanced c
 
 # Service
 
-- Coordinator of the [Master of Computer Science](https://icom.univ-lyon2.fr/formation/filiere-informatique-statistique), University of Lyon 2
-- Head of the Bachelor's degree program in Data Science, University of Lyon 2 
+- Coordinator of the [Master of Computer Science](https://icom.univ-lyon2.fr/formation/filiere-informatique-statistique), University of Lyon 2 (head of the 1st year)
 - Coordinator of the [Pôle HuNIS](https://www.univ-lyon2.fr/universite/les-poles-de-specialites/pole-hunis), University of Lyon 2
 - Member (elected) of the Administrative Board of ICOM, University of Lyon 2
 - Member of the executive committee of [IXXI](http://www.ixxi.fr), co-organizer of the seminar cycle [AI & language](http://www.ixxi.fr/seminaires/cycles-de-seminaires/intelligence-artificielle-et-langage?set_language=en&cl=en)
