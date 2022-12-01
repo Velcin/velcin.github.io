@@ -6,6 +6,7 @@ Ces ressources sont mises à disposition pour les étudiants inscrits à la form
 
 - [Supports de cours](https://velcin.github.io/files/python/Support_Python.pdf)
 - [Apprendre à programmer avec Python 3, par G. Swinnen](https://inforef.be/swi/download/apprendre_python3_5.pdf)
+- Feuilles de triches : 1 [https://velcin.github.io/files/python/python-cheatsheet1.png] 2 [https://velcin.github.io/files/python/python-cheatsheet2.png] 3 [https://velcin.github.io/files/python/python-cheatsheet3.png] 4 [https://velcin.github.io/files/python/python-cheatsheet4.png]
 
 ## Carnets de note (*notebooks*)
 
@@ -15,6 +16,10 @@ Ces ressources sont mises à disposition pour les étudiants inscrits à la form
 - [TD2 (export html)](https://velcin.github.io/files/python/TD2_UdL-TBC.html)
 - [TD3 (notebook)](https://velcin.github.io/files/python/TD3_UdL.ipynb)
 - [TD3 (export html)](https://velcin.github.io/files/python/TD3_UdL.html)
+
+Datasets :
+
+- [TD1 (notebook)](https://velcin.github.io/files/python/TD1_UdL-TBC.ipynb)
 
 # Répertoire de liens utiles en Python
 
