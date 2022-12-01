@@ -1,15 +1,26 @@
+# Ressources pour le cours UdL 2022-2023
+
+## Supports de cours
+
+- [Supports de cours](https://velcin.github.io/files/python/Support_Python.pdf)
+- [Apprendre à programmer avec Python 3, par G. Swinnen](https://inforef.be/swi/download/apprendre_python3_5.pdf)
+
+## Carnets de note (*notebooks*)
+
+
+
 # Répertoire de liens utiles en Python
 
 Cette liste n'est pas du tout exhaustive. Elle n'est peut-être pas à jour. J'y place les ressources que je trouve au fur et à mesure lorsque celles-ci me paraissent intéressantes.
 
-# Ressources générales
+## Ressources générales
 
 - [Collection d'algorithmes variés en Python ](https://github.com/TheAlgorithms/Python)
 - [Pandas cheat sheet](https://velcin.github.io/files/Pandas_Cheat_Sheet.pdf)
 - [*TQDM* : barre de chargement intégrée](https://tqdm.github.io)
 - [*Dtale* : manipulation avancée de DataFrame](https://t.co/qhb9fiKY9p)
 
-# Pour le traitement de données textuelles
+## Pour le traitement de données textuelles
 
 - [*Unidecode* : retirer les caractères spéciaux](https://t.co/mnf8CUc12a)
 - [*AST* : convertir des str en différents formats](https://t.co/JJRyc6yyzM)

@@ -18,7 +18,7 @@ Professor of Computer Science at the [University Lyon 2](https://www.univ-lyon2.
 # Publications
 
 [DBLP](https://dblp.org/pid/87/1950.html)   
-[Google scholar](https://scholar.google.fr/citations?user=_ZreLBMAAAAJ&hl=en)   
+[Google scholar](https://scholar.google.fr/citations?user=_ZreLBMAAAAJ&hl=en)
 
 # Projects
 
