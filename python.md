@@ -1,5 +1,7 @@
 # Ressources pour le cours UdL 2022-2023
 
+Ces ressources sont mises à disposition pour les étudiants inscrits à la formation doctorale proposée par l'UdL "A2-7 Introduction à la programmation Python".
+
 ## Supports de cours
 
 - [Supports de cours](https://velcin.github.io/files/python/Support_Python.pdf)
@@ -7,7 +9,12 @@
 
 ## Carnets de note (*notebooks*)
 
-
+- [TD1 (notebook)](https://velcin.github.io/files/python/TD1_UdL-TBC.ipynb)
+- [TD1 (export html)](https://velcin.github.io/files/python/TD1_UdL-TBC.html)
+- [TD2 (notebook)](https://velcin.github.io/files/python/TD2_UdL-TBC.ipynb)
+- [TD2 (export html)](https://velcin.github.io/files/python/TD2_UdL-TBC.html)
+- [TD3 (notebook)](https://velcin.github.io/files/python/TD3_UdL.ipynb)
+- [TD3 (export html)](https://velcin.github.io/files/python/TD3_UdL.html)
 
 # Répertoire de liens utiles en Python
 
