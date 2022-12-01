@@ -6,7 +6,7 @@ Ces ressources sont mises à disposition pour les étudiants inscrits à la form
 
 - [Supports de cours](https://velcin.github.io/files/python/Support_Python.pdf)
 - [Apprendre à programmer avec Python 3, par G. Swinnen](https://inforef.be/swi/download/apprendre_python3_5.pdf)
-- Feuilles de triches : 1 [https://velcin.github.io/files/python/python-cheatsheet1.png] 2 [https://velcin.github.io/files/python/python-cheatsheet2.png] 3 [https://velcin.github.io/files/python/python-cheatsheet3.png] 4 [https://velcin.github.io/files/python/python-cheatsheet4.png]
+- Feuilles de triches : [feuille 1](https://velcin.github.io/files/python/python-cheatsheet1.png) [feuille 2](https://velcin.github.io/files/python/python-cheatsheet2.png) [feuille 3](https://velcin.github.io/files/python/python-cheatsheet3.png) [feuille 4](https://velcin.github.io/files/python/python-cheatsheet4.png)
 
 ## Carnets de note (*notebooks*)
 
@@ -19,7 +19,11 @@ Ces ressources sont mises à disposition pour les étudiants inscrits à la form
 
 Datasets :
 
-- [TD1 (notebook)](https://velcin.github.io/files/python/TD1_UdL-TBC.ipynb)
+- [Promenades](https://velcin.github.io/files/python/datasets/evg_esp_veg.envpdiprboucle.json)
+- [Velib](https://velcin.github.io/files/python/datasets/velib.zip)
+- Mots outils : [français](https://velcin.github.io/files/python/datasets/Stop-words-french.txt), [anglais](https://velcin.github.io/files/python/datasets/Stop-words-english.txt)
+- [Holy Grail](https://velcin.github.io/files/python/datasets/holygrail.txt)
+- [Grand débat (extrait)](https://velcin.github.io/files/python/datasets/gd_qui.csv)
 
 # Répertoire de liens utiles en Python
 
