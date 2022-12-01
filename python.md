@@ -6,7 +6,7 @@ Ces ressources sont mises à disposition pour les étudiants inscrits à la form
 
 - [Supports de cours](https://velcin.github.io/files/python/Support_Python.pdf)
 - [Apprendre à programmer avec Python 3, par G. Swinnen](https://inforef.be/swi/download/apprendre_python3_5.pdf)
-- Feuilles de triches : [feuille 1](https://velcin.github.io/files/python/python-cheatsheet1.png) [feuille 2](https://velcin.github.io/files/python/python-cheatsheet2.png) [feuille 3](https://velcin.github.io/files/python/python-cheatsheet3.png) [feuille 4](https://velcin.github.io/files/python/python-cheatsheet4.png)
+- Feuilles de triches : [feuille 1](https://velcin.github.io/files/python/python-cheatsheet1.png), [feuille 2](https://velcin.github.io/files/python/python-cheatsheet2.png), [feuille 3](https://velcin.github.io/files/python/python-cheatsheet3.png), [feuille 4](https://velcin.github.io/files/python/python-cheatsheet4.png)
 
 ## Carnets de note (*notebooks*)
 
