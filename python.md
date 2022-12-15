@@ -20,7 +20,7 @@ Ces ressources sont mises à disposition pour les étudiants inscrits à la form
 Datasets :
 
 - [Promenades](https://velcin.github.io/files/python/datasets/evg_esp_veg.envpdiprboucle.json)
-- [Velib](https://velcin.github.io/files/python/datasets/velib.zip)
+- Velib: [en format csv](https://velcin.github.io/files/python/datasets/velib.zip), [en format xlsx](https://velcin.github.io/files/python/datasets/velib.xlsx)
 - Mots outils : [français](https://velcin.github.io/files/python/datasets/Stop-words-french.txt), [anglais](https://velcin.github.io/files/python/datasets/Stop-words-english.txt)
 - [Holy Grail](https://velcin.github.io/files/python/datasets/holygrail.txt)
 - [Grand débat (extrait)](https://velcin.github.io/files/python/datasets/gd_qui.csv)
