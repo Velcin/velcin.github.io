@@ -4,7 +4,8 @@ Ces ressources sont mises à disposition pour les étudiants inscrits à la form
 
 ## Supports de cours
 
-- [Supports de cours](https://velcin.github.io/files/python/Support_Python.pdf)
+- [Supports de cours (Python)](https://velcin.github.io/files/python/Support_Python.pdf)
+- [Supports de cours (Recherche d'information)](https://velcin.github.io/files/python/Recherche_dinformation.pdf)
 - [Apprendre à programmer avec Python 3, par G. Swinnen](https://inforef.be/swi/download/apprendre_python3_5.pdf)
 - Feuilles de triches : [feuille 1](https://velcin.github.io/files/python/python-cheatsheet1.png), [feuille 2](https://velcin.github.io/files/python/python-cheatsheet2.png), [feuille 3](https://velcin.github.io/files/python/python-cheatsheet3.png), [feuille 4](https://velcin.github.io/files/python/python-cheatsheet4.png)
 
@@ -28,6 +29,7 @@ Datasets :
 ## Corrigés
 
 - TD1 : [correction de 2021](https://velcin.github.io/files/python/TD1_UdL-correction-2021.ipynb) (plus ancienne, mais plus complète), [correction de 2022](https://velcin.github.io/files/python/TD1_UdL-correction-partielle-151222.ipynb) (celle utilisée en cours, plus actuelle mais avec des éléments qui manquent à la fin)
+- TD2 : [correction](https://velcin.github.io/files/python/TD2_UdL-correction.ipynb) 
 
 # Répertoire de liens utiles en Python
 
