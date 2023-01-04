@@ -17,6 +17,13 @@ Ces ressources sont mises à disposition pour les étudiants inscrits à la form
 
 ## Carnets de note (*notebooks*)
 
-(à venir)
+- [Perceptron sans couches cachées](https://velcin.github.io/files/deep/notebooks/intro-RL.ipynb)
+- [MLP sur les Iris](https://velcin.github.io/files/deep/notebooks/MLP_Iris.ipynb)
+- [Classification de textes](https://velcin.github.io/files/deep/notebooks/MLP_texte.ipynb)
+- [Classification d'images avec CNN](https://velcin.github.io/files/deep/notebooks/CNN_images.ipynb)
+- [Fouille d'opinion avec BERT](https://colab.research.google.com/github/TheophileBlard/french-sentiment-analysis-with-bert/blob/master/colab/french_sentiment_analysis_with_bert.ipynb)
 
-Datasets :
+## Eléments supplémentaires
+
+- [Sujet de TD](https://velcin.github.io/files/deep/TD/TD.pdf) avec [Implémentation R](https://velcin.github.io/files/deep/TD/ann.r) et [données](https://velcin.github.io/files/deep/TD/data.csv)
+- [Rétropropagation](https://velcin.github.io/files/deep/TD/backprop.r)
