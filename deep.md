@@ -23,6 +23,7 @@ Ces ressources sont mises à disposition pour les étudiants inscrits à la form
 - [Classification d'images avec CNN](https://velcin.github.io/files/deep/notebooks/CNN_images.ipynb)
 - [Classification d'images avec modèle pré-entraîné](https://velcin.github.io/files/deep/notebooks/CNN_images-2.ipynb)
 - [Fouille d'opinion avec BERT](https://colab.research.google.com/github/TheophileBlard/french-sentiment-analysis-with-bert/blob/master/colab/french_sentiment_analysis_with_bert.ipynb)
+- [Quelques essais avec des auto-encodeurs](https://velcin.github.io/files/deep/notebooks/autoencoder-draft.ipynb)
 
 ## Eléments supplémentaires
 
