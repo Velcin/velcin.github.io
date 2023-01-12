@@ -21,6 +21,7 @@ Ces ressources sont mises à disposition pour les étudiants inscrits à la form
 - [MLP sur les Iris](https://velcin.github.io/files/deep/notebooks/MLP_Iris.ipynb)
 - [Classification de textes](https://velcin.github.io/files/deep/notebooks/MLP_texte.ipynb)
 - [Classification d'images avec CNN](https://velcin.github.io/files/deep/notebooks/CNN_images.ipynb)
+- [Classification d'images avec modèle pré-entraîné](https://velcin.github.io/files/deep/notebooks/classification d'images sur modèle pré-entrainé.ipynb)
 - [Fouille d'opinion avec BERT](https://colab.research.google.com/github/TheophileBlard/french-sentiment-analysis-with-bert/blob/master/colab/french_sentiment_analysis_with_bert.ipynb)
 
 ## Eléments supplémentaires
