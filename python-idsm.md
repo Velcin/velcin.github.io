@@ -11,12 +11,12 @@ Ces ressources sont mises à disposition pour les étudiants inscrits au Master 
 
 ## Travaux Dirigés
 
-- LUNDI : TD1-2](https://velcin.github.io/files/python/td1-2.pdf)
-- MARDI : TD3](https://velcin.github.io/files/python/td3.pdf)
-- MERCREDI : TD4](https://velcin.github.io/files/python/td4.pdf)
-- JEUDI : TD5](https://velcin.github.io/files/python/td5.pdf)
-- VENDREDI : TD6](https://velcin.github.io/files/python/td6.pdf)
-- SAMEDI : TD7](https://velcin.github.io/files/python/td7.pdf)
+- LUNDI : [TD1-2](https://velcin.github.io/files/python/td1-2.pdf)
+- MARDI : [TD3](https://velcin.github.io/files/python/td3.pdf)
+- MERCREDI : [TD4](https://velcin.github.io/files/python/td4.pdf)
+- JEUDI : [TD5](https://velcin.github.io/files/python/td5.pdf)
+- VENDREDI : [TD6](https://velcin.github.io/files/python/td6.pdf)
+- SAMEDI : [TD7](https://velcin.github.io/files/python/td7.pdf)
 
 Datasets :
 
