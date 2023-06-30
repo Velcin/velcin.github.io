@@ -26,10 +26,10 @@ Datasets :
 - [Holy Grail](https://velcin.github.io/files/python/datasets/holygrail.txt)
 - [Grand débat (extrait)](https://velcin.github.io/files/python/datasets/gd_qui.csv)
 
-## Corrigés
+[//]: ## Corrigés
 
-- TD1 : [correction de 2021](https://velcin.github.io/files/python/TD1_UdL-correction-2021.ipynb) (plus ancienne, mais plus complète), [correction de 2022](https://velcin.github.io/files/python/TD1_UdL-correction-partielle-151222.ipynb) (celle utilisée en cours, plus actuelle mais avec des éléments qui manquent à la fin)
-- TD2 : [correction](https://velcin.github.io/files/python/TD2_UdL-correction.ipynb) 
+[//]: - TD1 : [correction de 2021](https://velcin.github.io/files/python/TD1_UdL-correction-2021.ipynb) (plus ancienne, mais plus complète), [correction de 2022](https://velcin.github.io/files/python/TD1_UdL-correction-partielle-151222.ipynb) (celle utilisée en cours, plus actuelle mais avec des éléments qui manquent à la fin)
+[//]: - TD2 : [correction](https://velcin.github.io/files/python/TD2_UdL-correction.ipynb) 
 
 # Répertoire de liens utiles en Python
 
