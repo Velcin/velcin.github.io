@@ -7487,6 +7487,17 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=423e29c8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Ce notebook est un exemple de traitement des données textuelles à des fins de classification binaires (2 classes uniquement).</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=499b15cd">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7551,7 +7562,9 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Chargement des données à partir d'un fichier .csv (colonnes séparées par une tabulation = "\t")</p>
+<p>Chargement des données à partir d'un fichier .csv (colonnes séparées par une tabulation = "\t").</p>
+<p>Nous allons utiliser, pour la démonstration, un jeu de données contenant des propos toxiques diffusés sur Internet (cf. défi Kaggle de 2018 : <a href="https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge">https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge</a>).</p>
+<p><strong>Attention :</strong> certains propos tenus dans les données peuvent choquer (insultes, racisme, etc.). Si vous le préferez, rien ne vous oblige à aller lire les textes d'origine.</p>
 </div>
 </div>
 </div>
@@ -7560,10 +7573,10 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [72]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">data_allocine</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"allocine_3k.csv"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">data_load</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/toxic_10k.csv"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7574,10 +7587,10 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [73]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">data_allocine</span><span class="o">.</span><span class="n">shape</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">data_load</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
@@ -7588,9 +7601,9 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[73]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>(3000, 3)</pre>
+<pre>(10000, 3)</pre>
 </div>
 </div>
 </div>
@@ -7611,10 +7624,11 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [178]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">data_allocine</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># on préfère affiche des exemples non toxiques, situés à la fin</span>
+<span class="n">data_load</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -7625,7 +7639,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[178]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7645,41 +7659,41 @@ a.anchor-link {
 <thead>
 <tr style="text-align: right;">
 <th></th>
-<th>id</th>
+<th>ids</th>
 <th>textes</th>
 <th>classes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th>0</th>
-<td>0</td>
-<td>un film plus sur les relations amoureuses et l...</td>
-<td>0</td>
-</tr>
-<tr>
-<th>1</th>
-<td>1</td>
-<td>Un très bon reportage mais qui pour moi manque...</td>
+<th>9995</th>
+<td>83838</td>
+<td>I'm afraid I know little about taxonomy, so ha...</td>
 <td>0</td>
 </tr>
 <tr>
-<th>2</th>
-<td>2</td>
-<td>Excellent .. Un peu d’humour par moment pour u...</td>
-<td>1</td>
-</tr>
-<tr>
-<th>3</th>
-<td>3</td>
-<td>La curiosité des dix premières minutes finit p...</td>
+<th>9996</th>
+<td>79900</td>
+<td>Talk:Jerusalem   Hi, I would appreciate it if ...</td>
 <td>0</td>
 </tr>
 <tr>
-<th>4</th>
-<td>4</td>
-<td>Le cinéaste Christophe Gans livre une producti...</td>
-<td>1</td>
+<th>9997</th>
+<td>119587</td>
+<td>Explanation   OTRS is for the people who have ...</td>
+<td>0</td>
+</tr>
+<tr>
+<th>9998</th>
+<td>86719</td>
+<td>friends' suspicions   The article says: Schiav...</td>
+<td>0</td>
+</tr>
+<tr>
+<th>9999</th>
+<td>92604</td>
+<td>"I don't know anyone who has entertained the b...</td>
+<td>0</td>
 </tr>
 </tbody>
 </table>
@@ -7693,11 +7707,11 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [75]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">textes</span> <span class="o">=</span> <span class="n">data_allocine</span><span class="p">[</span><span class="s2">"textes"</span><span class="p">]</span>
-<span class="n">classes</span> <span class="o">=</span> <span class="n">data_allocine</span><span class="p">[</span><span class="s2">"classes"</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">textes</span> <span class="o">=</span> <span class="n">data_load</span><span class="p">[</span><span class="s2">"textes"</span><span class="p">]</span>
+<span class="n">classes</span> <span class="o">=</span> <span class="n">data_load</span><span class="p">[</span><span class="s2">"classes"</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -7719,7 +7733,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [76]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">unique_values</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -7738,8 +7752,8 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>0 occurs 1496 times
-1 occurs 1504 times
+<pre>0 occurs 5000 times
+1 occurs 5000 times
 </pre>
 </div>
 </div>
@@ -7756,19 +7770,46 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b81c8ce5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Construction de la matrice Documents x Termes (cf. TP précédent)</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=cde52120">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [190]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">vectorize_allocine</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">ngram_range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">max_df</span><span class="o">=</span><span class="mf">0.88</span><span class="p">,</span> <span class="n">min_df</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">vectorize_allocine</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">textes</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">vectorize_allocine</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">textes</span><span class="p">)</span> <span class="c1">#.toarray()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># les paramètres sont un peu fixés au hasard ici</span>
+<span class="n">vectorize</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">ngram_range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">max_df</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">min_df</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">vectorize</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">textes</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">vectorize</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">textes</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=797838d7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Division du jeu de données initial en deux sous-ensembles :</p>
+<ul>
+<li>données d'entraînement ou <em>training set</em></li>
+<li>données de test (ici appelé parfois valiation)</li>
+</ul>
 </div>
 </div>
 </div>
@@ -7777,15 +7818,49 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [181]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">subtrain_X</span><span class="p">,</span> <span class="n">subtest_X</span><span class="p">,</span> <span class="n">subtrain_y</span><span class="p">,</span> <span class="n">subtest_y</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">classes</span><span class="p">,</span>
                                                     <span class="n">train_size</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
                                                     <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
-                                                    <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+                                                    <span class="n">random_state</span><span class="o">=</span><span class="mi">124</span><span class="p">,</span>
                                                    <span class="n">stratify</span><span class="o">=</span><span class="n">classes</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=68c9afbb">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [189]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># vérifions que la stratification a bien fonctionné</span>
+
+<span class="n">unique_values_a</span><span class="p">,</span> <span class="n">counts_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">subtrain_y</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">unique_values_b</span><span class="p">,</span> <span class="n">counts_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">subtest_y</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Jeu d'entrainement : "</span> <span class="o">+</span> <span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">value</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">unique_values_a</span><span class="p">,</span> <span class="n">counts_a</span><span class="p">)]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Jeu de test : "</span> <span class="o">+</span> <span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">value</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">unique_values_b</span><span class="p">,</span> <span class="n">counts_b</span><span class="p">)]))</span>   
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Jeu d'entrainement : 0:3500 1:3500
+Jeu de test : 0:1500 1:1500
+</pre>
 </div>
 </div>
 </div>
@@ -7795,7 +7870,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [151]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">subtrain_X</span><span class="o">.</span><span class="n">shape</span>
@@ -7809,9 +7884,9 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[151]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>(2100, 14684)</pre>
+<pre>(7000, 18725)</pre>
 </div>
 </div>
 </div>
@@ -7824,6 +7899,17 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Apprentissage-automatique">Apprentissage automatique<a class="anchor-link" href="#Apprentissage-automatique">¶</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5c771ce4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Nous allons tester différents algorithmes de classification supervisée qui traitent ici les textes en suivant l'hypothèse du sac de mots (BoW).</p>
 </div>
 </div>
 </div>
@@ -7843,7 +7929,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [161]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
@@ -7860,7 +7946,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [162]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Ce qui est prédit : "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">pred_y_lr</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">]))</span>
@@ -7878,27 +7964,27 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Ce qui est prédit : [1 0 1 1 0 0 0 1 1 1 0 0 0 1 1 1 0 0 0 0]
-La vérité : 95      1
-581     0
-328     1
-596     1
-2502    0
-1799    0
-2331    0
-525     1
-1526    1
-778     1
-1370    0
-680     0
-2402    0
-1575    1
-70      1
-1878    1
-1511    1
-645     0
-1209    0
-515     0
+<pre>Ce qui est prédit : [0 0 1 1 1 0 1 0 1 0 1 1 1 1 0 0 1 0 0 0]
+La vérité : 5397    0
+5894    0
+3326    1
+4146    1
+748     1
+1965    1
+3222    1
+4470    1
+4960    1
+146     1
+7677    0
+2413    1
+2151    1
+1277    1
+9426    0
+4577    1
+691     1
+5478    0
+8806    0
+7372    0
 Name: classes, dtype: int64
 </pre>
 </div>
@@ -7910,12 +7996,12 @@ Name: classes, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [163]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">res_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">pred_y_lr</span> <span class="o">==</span> <span class="n">subtest_y</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">subtest_y</span><span class="p">))</span>
                                        
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Réussite en validation (sous-ensemble) </span><span class="si">{</span><span class="n">res_test</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Réussite en validation </span><span class="si">{</span><span class="n">res_test</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7928,7 +8014,7 @@ Name: classes, dtype: int64
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Réussite en validation (sous-ensemble) 87.1%
+<pre>Réussite en validation 86.2%
 </pre>
 </div>
 </div>
@@ -7950,13 +8036,13 @@ Name: classes, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [164]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">pred_y_lr</span> <span class="o">=</span> <span class="n">lr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">subtrain_X</span><span class="p">)</span>
 
 <span class="n">res_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">pred_y_lr</span> <span class="o">==</span> <span class="n">subtrain_y</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">subtrain_y</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Réussite en validation (sous-ensemble) </span><span class="si">{</span><span class="n">res_train</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Réussite sur les données d'entraînement </span><span class="si">{</span><span class="n">res_train</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7969,7 +8055,7 @@ Name: classes, dtype: int64
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Réussite en validation (sous-ensemble) 96.9%
+<pre>Réussite sur les données d'entraînement 93.6%
 </pre>
 </div>
 </div>
@@ -7983,7 +8069,7 @@ Name: classes, dtype: int64
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Deux remarques importantes à ce stade :</p>
-<pre><code>1. On peut observer une nette différence entre les deux erreurs, signe d'un sur-apprentissage (*overfitting*)
+<pre><code>1. On peut observer une différence entre les deux erreurs, signe d'un sur-apprentissage (*overfitting*)
 2. Nous avons utilisé un même nom de variable (pred_y_lr) pour deux résultats différents : c'est une mauvaise habitude et nous allons utiliser 2 variables différentes pour la suite.</code></pre>
 </div>
 </div>
@@ -8005,10 +8091,10 @@ Essayons par ex. la régression ridge :</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [165]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">lr_ridge</span> <span class="o">=</span> <span class="n">RidgeClassifier</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">lr_ridge</span> <span class="o">=</span> <span class="n">RidgeClassifier</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">20.0</span><span class="p">)</span>
 <span class="n">lr_ridge</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">subtrain_X</span><span class="p">,</span> <span class="n">subtrain_y</span><span class="p">)</span>
 <span class="n">pred_train_lr_ridge</span> <span class="o">=</span> <span class="n">lr_ridge</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">subtrain_X</span><span class="p">)</span>
 <span class="n">pred_test_lr_ridge</span> <span class="o">=</span> <span class="n">lr_ridge</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">subtest_X</span><span class="p">)</span>
@@ -8033,7 +8119,7 @@ Essayons par ex. la régression ridge :</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [166]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">res_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">pred_train_lr_ridge</span> <span class="o">==</span> <span class="n">subtrain_y</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">subtrain_y</span><span class="p">))</span>
@@ -8055,8 +8141,8 @@ Essayons par ex. la régression ridge :</p>
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Réussite sur :
-  - ensemble d'entraînement : 94.0%
-  - ensemble de test : 86.1%
+  - ensemble d'entraînement : 88.6%
+  - ensemble de test : 84.9%
 </pre>
 </div>
 </div>
@@ -8101,7 +8187,7 @@ L'objectif est donc plus de choisir l'algorithme que de trouver le modèle lui-m
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [167]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">seed</span> <span class="o">=</span> <span class="mi">7</span>
@@ -8122,7 +8208,7 @@ L'objectif est donc plus de choisir l'algorithme que de trouver le modèle lui-m
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Validation croisée : moyenne 85.0% et écart-type 0.02
+<pre>Validation croisée : moyenne 86.5% et écart-type 0.01
 </pre>
 </div>
 </div>
@@ -8145,7 +8231,7 @@ L'objectif est donc plus de choisir l'algorithme que de trouver le modèle lui-m
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [168]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_error</span><span class="p">(</span><span class="n">nom_algo</span><span class="p">,</span> <span class="n">pred_train</span><span class="p">,</span> <span class="n">pred_test</span><span class="p">):</span>
@@ -8175,7 +8261,7 @@ L'objectif est donc plus de choisir l'algorithme que de trouver le modèle lui-m
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [169]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">svc_lin</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s2">"linear"</span><span class="p">,</span> <span class="n">degree</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -8199,8 +8285,8 @@ L'objectif est donc plus de choisir l'algorithme que de trouver le modèle lui-m
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>SVC linéaire : 
-  - erreur apparente : 99.0%
-  - erreur en généralisation : 87.2%
+  - erreur apparente : 97.7%
+  - erreur en généralisation : 87.1%
 </pre>
 </div>
 </div>
@@ -8211,7 +8297,7 @@ L'objectif est donc plus de choisir l'algorithme que de trouver le modèle lui-m
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [170]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">svc_poly2</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s2">"poly"</span><span class="p">,</span> <span class="n">degree</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -8235,8 +8321,8 @@ L'objectif est donc plus de choisir l'algorithme que de trouver le modèle lui-m
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>SVC poly degré 2 : 
-  - erreur apparente : 100.0%
-  - erreur en généralisation : 86.8%
+  - erreur apparente : 99.8%
+  - erreur en généralisation : 86.0%
 </pre>
 </div>
 </div>
@@ -8258,7 +8344,7 @@ L'objectif est donc plus de choisir l'algorithme que de trouver le modèle lui-m
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [171]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">xgb</span> <span class="o">=</span> <span class="n">XGBClassifier</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -8282,8 +8368,8 @@ L'objectif est donc plus de choisir l'algorithme que de trouver le modèle lui-m
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>XGBoost : 
-  - erreur apparente : 99.6%
-  - erreur en généralisation : 79.3%
+  - erreur apparente : 95.1%
+  - erreur en généralisation : 85.9%
 </pre>
 </div>
 </div>
@@ -8305,7 +8391,7 @@ L'objectif est donc plus de choisir l'algorithme que de trouver le modèle lui-m
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [172]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">mlp</span> <span class="o">=</span> <span class="n">MLPClassifier</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s1">'lbfgs'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">,</span> <span class="n">hidden_layer_sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -8330,7 +8416,7 @@ L'objectif est donc plus de choisir l'algorithme que de trouver le modèle lui-m
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>MLP 1 couche cachée : 
   - erreur apparente : 100.0%
-  - erreur en généralisation : 89.2%
+  - erreur en généralisation : 86.5%
 </pre>
 </div>
 </div>
@@ -8354,7 +8440,8 @@ L'objectif est donc plus de choisir l'algorithme que de trouver le modèle lui-m
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Il faut créer une table qui résumé les principaux résultats obtenus.</p>
+<p>Il faut créer une table qui résume les principaux résultats obtenus.
+Ici, on se contentera d'utiliser la pertinence (<em>accuracy</em>) des résultats, mais d'autres critères pourraient être employés : temps d'apprentissage, temps pour l'inférence, etc.</p>
 </div>
 </div>
 </div>
@@ -8363,7 +8450,7 @@ L'objectif est donc plus de choisir l'algorithme que de trouver le modèle lui-m
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [173]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#fonction qui retourne les scores d'erreur</span>
@@ -8381,7 +8468,7 @@ L'objectif est donc plus de choisir l'algorithme que de trouver le modèle lui-m
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [174]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Calcul des erreurs</span>
@@ -8401,26 +8488,12 @@ L'objectif est donc plus de choisir l'algorithme que de trouver le modèle lui-m
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=16309b48">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># formatage</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a2b097c9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [175]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">noms_algo</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Régression logistique"</span><span class="p">,</span> <span class="s2">"Classification Ridge"</span><span class="p">,</span> <span class="s2">"SVM linéaire"</span><span class="p">,</span> <span class="s2">"SVM polynôme 2"</span><span class="p">,</span> <span class="s2">"XGBoost"</span><span class="p">,</span> <span class="s2">"MLP 1 couche cachée"</span><span class="p">]</span>
@@ -8436,7 +8509,7 @@ L'objectif est donc plus de choisir l'algorithme que de trouver le modèle lui-m
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [176]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"algo"</span> <span class="p">:</span> <span class="n">noms_algo</span><span class="p">,</span> <span class="s2">"erreur app"</span><span class="p">:</span> <span class="n">erreurs_app</span><span class="p">,</span> <span class="s2">"erreur gen"</span><span class="p">:</span> <span class="n">erreurs_gen</span><span class="p">})</span>
@@ -8450,7 +8523,7 @@ L'objectif est donc plus de choisir l'algorithme que de trouver le modèle lui-m
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [177]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">res</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">format</span><span class="p">({</span>
@@ -8467,55 +8540,55 @@ L'objectif est donc plus de choisir l'algorithme que de trouver le modèle lui-m
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[177]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <style type="text/css">
 </style>
-<table id="T_bcf1f">
+<table id="T_bf099">
 <thead>
 <tr>
 <th class="blank level0"> </th>
-<th class="col_heading level0 col0" id="T_bcf1f_level0_col0">algo</th>
-<th class="col_heading level0 col1" id="T_bcf1f_level0_col1">erreur app</th>
-<th class="col_heading level0 col2" id="T_bcf1f_level0_col2">erreur gen</th>
+<th class="col_heading level0 col0" id="T_bf099_level0_col0">algo</th>
+<th class="col_heading level0 col1" id="T_bf099_level0_col1">erreur app</th>
+<th class="col_heading level0 col2" id="T_bf099_level0_col2">erreur gen</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th class="row_heading level0 row0" id="T_bcf1f_level0_row0">0</th>
-<td class="data row0 col0" id="T_bcf1f_row0_col0">Régression logistique</td>
-<td class="data row0 col1" id="T_bcf1f_row0_col1">96.90%</td>
-<td class="data row0 col2" id="T_bcf1f_row0_col2">87.11%</td>
+<th class="row_heading level0 row0" id="T_bf099_level0_row0">0</th>
+<td class="data row0 col0" id="T_bf099_row0_col0">Régression logistique</td>
+<td class="data row0 col1" id="T_bf099_row0_col1">93.60%</td>
+<td class="data row0 col2" id="T_bf099_row0_col2">86.17%</td>
 </tr>
 <tr>
-<th class="row_heading level0 row1" id="T_bcf1f_level0_row1">1</th>
-<td class="data row1 col0" id="T_bcf1f_row1_col0">Classification Ridge</td>
-<td class="data row1 col1" id="T_bcf1f_row1_col1">93.95%</td>
-<td class="data row1 col2" id="T_bcf1f_row1_col2">86.11%</td>
+<th class="row_heading level0 row1" id="T_bf099_level0_row1">1</th>
+<td class="data row1 col0" id="T_bf099_row1_col0">Classification Ridge</td>
+<td class="data row1 col1" id="T_bf099_row1_col1">88.64%</td>
+<td class="data row1 col2" id="T_bf099_row1_col2">84.90%</td>
 </tr>
 <tr>
-<th class="row_heading level0 row2" id="T_bcf1f_level0_row2">2</th>
-<td class="data row2 col0" id="T_bcf1f_row2_col0">SVM linéaire</td>
-<td class="data row2 col1" id="T_bcf1f_row2_col1">99.05%</td>
-<td class="data row2 col2" id="T_bcf1f_row2_col2">87.22%</td>
+<th class="row_heading level0 row2" id="T_bf099_level0_row2">2</th>
+<td class="data row2 col0" id="T_bf099_row2_col0">SVM linéaire</td>
+<td class="data row2 col1" id="T_bf099_row2_col1">97.66%</td>
+<td class="data row2 col2" id="T_bf099_row2_col2">87.13%</td>
 </tr>
 <tr>
-<th class="row_heading level0 row3" id="T_bcf1f_level0_row3">3</th>
-<td class="data row3 col0" id="T_bcf1f_row3_col0">SVM polynôme 2</td>
-<td class="data row3 col1" id="T_bcf1f_row3_col1">100.00%</td>
-<td class="data row3 col2" id="T_bcf1f_row3_col2">86.78%</td>
+<th class="row_heading level0 row3" id="T_bf099_level0_row3">3</th>
+<td class="data row3 col0" id="T_bf099_row3_col0">SVM polynôme 2</td>
+<td class="data row3 col1" id="T_bf099_row3_col1">99.80%</td>
+<td class="data row3 col2" id="T_bf099_row3_col2">86.03%</td>
 </tr>
 <tr>
-<th class="row_heading level0 row4" id="T_bcf1f_level0_row4">4</th>
-<td class="data row4 col0" id="T_bcf1f_row4_col0">XGBoost</td>
-<td class="data row4 col1" id="T_bcf1f_row4_col1">99.62%</td>
-<td class="data row4 col2" id="T_bcf1f_row4_col2">79.33%</td>
+<th class="row_heading level0 row4" id="T_bf099_level0_row4">4</th>
+<td class="data row4 col0" id="T_bf099_row4_col0">XGBoost</td>
+<td class="data row4 col1" id="T_bf099_row4_col1">95.11%</td>
+<td class="data row4 col2" id="T_bf099_row4_col2">85.93%</td>
 </tr>
 <tr>
-<th class="row_heading level0 row5" id="T_bcf1f_level0_row5">5</th>
-<td class="data row5 col0" id="T_bcf1f_row5_col0">MLP 1 couche cachée</td>
-<td class="data row5 col1" id="T_bcf1f_row5_col1">100.00%</td>
-<td class="data row5 col2" id="T_bcf1f_row5_col2">89.22%</td>
+<th class="row_heading level0 row5" id="T_bf099_level0_row5">5</th>
+<td class="data row5 col0" id="T_bf099_row5_col0">MLP 1 couche cachée</td>
+<td class="data row5 col1" id="T_bf099_row5_col1">99.96%</td>
+<td class="data row5 col2" id="T_bf099_row5_col2">86.50%</td>
 </tr>
 </tbody>
 </table>
@@ -8523,7 +8596,22 @@ L'objectif est donc plus de choisir l'algorithme que de trouver le modèle lui-m
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e7bc587e">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=81f83064">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>On constate ici que les meilleurs classifieurs sont linéaires (SVM et régression logistique). Plusieurs explications sont possibles :</p>
+<ul>
+<li>Le problème est très simple et un classifieur linéaire suffit à obtenir de (très) bonnes performances</li>
+<li>L'ensemble de test n'est pas très représentatif et ressemble trop aux données d'entraînement (biais dans l'acquisition des données)</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=48b9b604">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>

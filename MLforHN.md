@@ -12,13 +12,17 @@ Julien Velcin, Université Lyon 2 - Master Humanités Numériques
 
 - rendu n°1 : réalisation d'un moteur de recherche : [consignes rendu 1 (html)](https://velcin.github.io/files/HN/rendu1-squelette.html), [consignes rendu 1 (notebook ipynb)](https://velcin.github.io/files/HN/rendu1-squelette.ipynb)
 
+- corpus possibles : [Alice au pays des merveilles](https://velcin.github.io/files/HN/data/alice.txt), [L'île au trésor](https://velcin.github.io/files/HN/data/treasure.txt)
+
 ### Partie 2 : classification supervisée
 
 **Objectif :** utilisation d'algorithmes de classification, mesure des performances (différents types d'erreur)
 
 - classification supervisée avec modèles classiques :[export html](https://velcin.github.io/files/HN/TD2_M2_HN.html), [notebook ipynb](https://velcin.github.io/files/HN/TD2_M2_HN.ipynb)
 
-- rendu n°2 : classification de critiques de film : [consignes](https://velcin.github.io/files/HN/rendu2-squelette.html)
+- jeu de données de messages toxiques (extrait): [toxic_10k.csv](https://velcin.github.io/files/HN/data/toxic_10k.csv)
+
+- rendu n°2 : classification de critiques de film : [consignes](https://velcin.github.io/files/HN/rendu2-squelette.html), [allocine_3k.csv](https://velcin.github.io/files/HN/data/allocine_3k.csv)
 
 ### Partie 3 : vers les grands modèles de langue
 
