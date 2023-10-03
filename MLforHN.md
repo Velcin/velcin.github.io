@@ -8,7 +8,7 @@ Julien Velcin, Université Lyon 2 - Master Humanités Numériques
 
 **Objectif :** prétraitement des données, représentation des documents dans un espace vectoriel, calcul de similarité entre vecteurs/documents
 
-- introduction générale au cours : [slides](https://velcin.github.io/files/HN/introduction-générale.pdf)
+- introduction générale au cours : [slides](https://velcin.github.io/files/HN/introduction.pdf)
 
 - représentation pour les données textuelles : [slides](https://velcin.github.io/files/HN/representation-textes.pdf)
 
