@@ -34,7 +34,7 @@ Julien Velcin, Université Lyon 2 - Master Humanités Numériques
 
 **Objectif :** architecture du Transformer, connaissance des modèles encodeurs-décodeurs et des modèles génératifs, manipulation de notebook en ligne
 
-- Les grands modèles de langue : [slides](https://velcin.github.io/files/HN/LLMs.pdf)
+- Introduction aux grands modèles de langue : [slides](https://velcin.github.io/files/HN/LLMs.pdf)
 
 - courte démo pour utiliser des plongements (embedding) avec la librairie Spacy : [export html](https://velcin.github.io/files/HN/TD3_M2_HN.html), [notebook ipynb](https://velcin.github.io/files/HN/TD3_M2_HN.ipynb)
 
