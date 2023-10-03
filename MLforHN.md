@@ -8,6 +8,10 @@ Julien Velcin, Université Lyon 2 - Master Humanités Numériques
 
 **Objectif :** prétraitement des données, représentation des documents dans un espace vectoriel, calcul de similarité entre vecteurs/documents
 
+- introduction générale au cours : [slides](https://velcin.github.io/files/HN/introduction-générale.pdf)
+
+- représentation pour les données textuelles : [slides](https://velcin.github.io/files/HN/representation-textes.pdf)
+
 - introduction à la recherche d'information pour les données textuelles (approches traditionnelles) : [export en html](https://velcin.github.io/files/HN/TD1_M2_HN.html), [notebook](https://velcin.github.io/files/HN/TD1_M2_HN.ipynb)
 
 - rendu n°1 : réalisation d'un moteur de recherche : [consignes rendu 1 (html)](https://velcin.github.io/files/HN/rendu1-squelette.html), [consignes rendu 1 (notebook ipynb)](https://velcin.github.io/files/HN/rendu1-squelette.ipynb)
@@ -18,6 +22,8 @@ Julien Velcin, Université Lyon 2 - Master Humanités Numériques
 
 **Objectif :** utilisation d'algorithmes de classification, mesure des performances (différents types d'erreur)
 
+- introduction générale au cours : [slides](https://velcin.github.io/files/HN/machine-learning.pdf)
+
 - classification supervisée avec modèles classiques : [export html](https://velcin.github.io/files/HN/TD2_M2_HN.html), [notebook ipynb](https://velcin.github.io/files/HN/TD2_M2_HN.ipynb)
 
 - jeu de données de messages toxiques (extrait): [toxic_10k.csv](https://velcin.github.io/files/HN/data/toxic_10k.csv)
@@ -27,6 +33,8 @@ Julien Velcin, Université Lyon 2 - Master Humanités Numériques
 ### Partie 3 : vers les grands modèles de langue
 
 **Objectif :** architecture du Transformer, connaissance des modèles encodeurs-décodeurs et des modèles génératifs, manipulation de notebook en ligne
+
+- introduction générale au cours : [slides](https://velcin.github.io/files/HN/LLMs.pdf)
 
 - courte démo pour utiliser des plongements (embedding) avec la librairie Spacy : [export html](https://velcin.github.io/files/HN/TD3_M2_HN.html), [notebook ipynb](https://velcin.github.io/files/HN/TD3_M2_HN.ipynb)
 
