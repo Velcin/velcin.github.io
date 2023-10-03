@@ -18,7 +18,7 @@ Julien Velcin, Université Lyon 2 - Master Humanités Numériques
 
 **Objectif :** utilisation d'algorithmes de classification, mesure des performances (différents types d'erreur)
 
-- classification supervisée avec modèles classiques :[export html](https://velcin.github.io/files/HN/TD2_M2_HN.html), [notebook ipynb](https://velcin.github.io/files/HN/TD2_M2_HN.ipynb)
+- classification supervisée avec modèles classiques : [export html](https://velcin.github.io/files/HN/TD2_M2_HN.html), [notebook ipynb](https://velcin.github.io/files/HN/TD2_M2_HN.ipynb)
 
 - jeu de données de messages toxiques (extrait): [toxic_10k.csv](https://velcin.github.io/files/HN/data/toxic_10k.csv)
 
