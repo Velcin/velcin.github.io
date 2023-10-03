@@ -22,7 +22,7 @@ Julien Velcin, Université Lyon 2 - Master Humanités Numériques
 
 **Objectif :** utilisation d'algorithmes de classification, mesure des performances (différents types d'erreur)
 
-- introduction générale au cours : [slides](https://velcin.github.io/files/HN/machine-learning.pdf)
+- Apprentissage automatique (supervisé) : [slides](https://velcin.github.io/files/HN/machine-learning.pdf)
 
 - classification supervisée avec modèles classiques : [export html](https://velcin.github.io/files/HN/TD2_M2_HN.html), [notebook ipynb](https://velcin.github.io/files/HN/TD2_M2_HN.ipynb)
 
@@ -34,7 +34,7 @@ Julien Velcin, Université Lyon 2 - Master Humanités Numériques
 
 **Objectif :** architecture du Transformer, connaissance des modèles encodeurs-décodeurs et des modèles génératifs, manipulation de notebook en ligne
 
-- introduction générale au cours : [slides](https://velcin.github.io/files/HN/LLMs.pdf)
+- Les grands modèles de langue : [slides](https://velcin.github.io/files/HN/LLMs.pdf)
 
 - courte démo pour utiliser des plongements (embedding) avec la librairie Spacy : [export html](https://velcin.github.io/files/HN/TD3_M2_HN.html), [notebook ipynb](https://velcin.github.io/files/HN/TD3_M2_HN.ipynb)
 
