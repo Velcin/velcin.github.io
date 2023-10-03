@@ -36,5 +36,4 @@ Julien Velcin, Université Lyon 2 - Master Humanités Numériques
 
 - système de Questions-Réponses : [lien google collab](https://colab.research.google.com/drive/18mogNkH6ou2eAxquN43hJKxgjRx2KbpN?usp=sharing)
 
-
-(à suivre)
+- affinage de la famille BERT pour la classification : [lien google collab](https://colab.research.google.com/drive/1p1_Jv-KtyG4tpAyzhGlNYiNCOafakAEA?usp=sharing)
