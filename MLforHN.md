@@ -37,3 +37,9 @@ Julien Velcin, Université Lyon 2 - Master Humanités Numériques
 - système de Questions-Réponses : [lien google collab](https://colab.research.google.com/drive/18mogNkH6ou2eAxquN43hJKxgjRx2KbpN?usp=sharing)
 
 - affinage de la famille BERT pour la classification : [lien google collab](https://colab.research.google.com/drive/1p1_Jv-KtyG4tpAyzhGlNYiNCOafakAEA?usp=sharing)
+
+- text classification on GLUE : [lien google collab](https://colab.research.google.com/github/huggingface/notebooks/blob/main/examples/text_classification-tf.ipynb#scrollTo=TlqNaB8jIrJW)
+
+- génération simple de texte avec GPT2 : [lien google collab](https://colab.research.google.com/drive/1YAvRykmuNREzfiHTqc-O9qpEGumpbCUI?usp=sharing)
+
+- modèles génératifs plus avancés basés sur la librairie [OnPrem](https://pypi.org/project/onprem/) : [lien google collab](https://colab.research.google.com/drive/1LVeacsQ9dmE1BVzwR3eTLukpeRIMmUqi?usp=sharing)
