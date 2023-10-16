@@ -1,4 +1,4 @@
-# Ressources pour le cours UdL 2022-2023
+# Ressources pour le cours UdL 2023-2024
 
 Ces ressources sont mises à disposition pour les étudiants inscrits à la formation doctorale proposée par l'UdL "A2-8 Deep Learning : une introduction".
 
