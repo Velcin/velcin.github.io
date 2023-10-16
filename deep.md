@@ -21,8 +21,6 @@ Ces ressources sont mises à disposition pour les étudiants inscrits à la form
 
 - jeu de données de messages toxiques (extrait): [toxic_10k.csv](https://velcin.github.io/files/HN/data/toxic_10k.csv)
 
-- rendu n°2 : classification de critiques de film : [consignes](https://velcin.github.io/files/HN/rendu2-squelette.html), [allocine_3k.csv](https://velcin.github.io/files/HN/data/allocine_3k.csv)
-
 - courte démo pour utiliser des plongements (embedding) avec la librairie Spacy : [export html](https://velcin.github.io/files/HN/TD3_M2_HN.html), [notebook ipynb](https://velcin.github.io/files/HN/TD3_M2_HN.ipynb)
 
 - classification de critiques de film à l'aide d'un modèle déjà affiné : [lien google collab](https://colab.research.google.com/drive/17wdal6LOhU47fVQGwqUWQxJMliQK72Nk?usp=sharing)
