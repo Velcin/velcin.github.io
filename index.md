@@ -23,8 +23,9 @@ Professor of Computer Science at the [University Lyon 2](https://www.univ-lyon2.
 # Projects
 
 - **DIKé** (ANR, 2022-2026) : Bias, fairness and ethics of compressed NLP models ([website](http://www.anr-dike.fr/))
-<!--- **POIVRE** (2021-2022) : Viewpoint detection on information networks-->
-<!--- **TIGA** (2020-2023): L’industrie [Re]connectée et intégrée à son territoire et à ses habitants.-->
+<!--
+	- **POIVRE** (2021-2022) : Viewpoint detection on information networks
+	- **TIGA** (2020-2023): L’industrie [Re]connectée et intégrée à son territoire et à ses habitants. -->
 - **LIFRANUM** (ANR, 2020-2023): identify and structure the corpus of digital French literatures ([website](https://marge.univ-lyon3.fr/projet-lifranum))
 
 # Recent talks
