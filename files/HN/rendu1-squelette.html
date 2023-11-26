@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>rendu 2 - squelette</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>rendu1-squelette</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7549,13 +7549,17 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># il faut adapter la liste à vos besoins</span>
+<span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
 <span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">nltk.stem.snowball</span> <span class="kn">import</span> <span class="n">SnowballStemmer</span>
+<span class="kn">from</span> <span class="nn">scipy.sparse</span> <span class="kn">import</span> <span class="n">find</span><span class="p">,</span> <span class="n">csr_matrix</span>
+<span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">norm</span>
 </pre></div>
 </div>
 </div>
@@ -7584,22 +7588,16 @@ a.anchor-link {
 <span class="c1"># par exemple :</span>
 <span class="c1"># pd.set_option('display.max_rows', None)</span>
 
-<span class="c1"># fonction pour afficher les mots (features) d'un ensemble de lignes</span>
-<span class="k">def</span> <span class="nf">top_feats</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">top_n</span><span class="o">=</span><span class="mi">25</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">''' Get top n tfidf values in row and return them with their corresponding feature names.'''</span>
-    <span class="n">topn_ids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">row</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">][:</span><span class="n">top_n</span><span class="p">]</span>
-    <span class="n">top_feats</span> <span class="o">=</span> <span class="p">[(</span><span class="n">features</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">topn_ids</span> <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">top_feats</span><span class="p">)</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">top_feats</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'feature'</span><span class="p">,</span> <span class="s1">'score'</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">df</span>
-
-<span class="c1"># fonction pour afficher les mots (*features*) d'une ligne en particulier (*row_id*)</span>
-<span class="c1"># *top_n* indique le nombre de mots maximum à afficher</span>
-<span class="k">def</span> <span class="nf">top_feats_in_doc</span><span class="p">(</span><span class="n">Xtr</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">row_id</span><span class="p">,</span> <span class="n">top_n</span><span class="o">=</span><span class="mi">25</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">''' Top features in specific document (matrix row) '''</span>
-    <span class="n">row</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">Xtr</span><span class="p">[</span><span class="n">row_id</span><span class="p">]</span><span class="o">.</span><span class="n">toarray</span><span class="p">())</span>
-    <span class="k">return</span> <span class="n">top_feats</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">top_n</span><span class="p">)</span>
+<span class="c1"># fonction pour afficher une "jolie" représentation du vecteur v</span>
+<span class="c1"># ARGS :</span>
+<span class="c1">#   v : le vecteur à afficher (par ex. une ligne de la matrice X)</span>
+<span class="c1">#   features : le vocabulaire</span>
+<span class="c1">#   top_n : le nombre de mots maximum à afficher</span>
+<span class="k">def</span> <span class="nf">print_feats</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">top_n</span> <span class="o">=</span> <span class="mi">30</span><span class="p">):</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="n">feats</span> <span class="o">=</span> <span class="p">[(</span><span class="n">ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">features</span><span class="p">[</span><span class="n">ids</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ids</span><span class="p">)))]</span>
+    <span class="n">top_feats</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">feats</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="n">top_n</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"word"</span> <span class="p">:</span> <span class="p">[</span><span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">top_feats</span><span class="p">],</span> <span class="s2">"value"</span><span class="p">:</span> <span class="p">[</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">top_feats</span><span class="p">]})</span>   
 
 <span class="c1"># affiche un concordancier pour le motif/mot *pat* dans la chaîne de caractères *texte*</span>
 <span class="c1"># *window* précise le nombre de caractères à afficher à droite et à gauche</span>
@@ -7612,22 +7610,25 @@ a.anchor-link {
     <span class="n">context_right</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"contexte droit"</span><span class="p">:</span> <span class="p">[</span><span class="n">texte</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">j</span><span class="o">+</span><span class="n">window</span><span class="p">]</span> <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="ow">in</span> <span class="n">pos_pattern</span><span class="p">]})</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">context_left</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">context_right</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 
-<span class="c1"># retourne la similarité du cosinus entre les vecteurs *i* et *j*</span>
+<span class="c1"># fonction calculant le cosinus entre deux vecteurs</span>
 <span class="k">def</span> <span class="nf">cosinus</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
-    <span class="n">num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
-    <span class="n">den</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">))</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">j</span><span class="o">*</span><span class="n">j</span><span class="p">))</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">den</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">):</span>    
+        <span class="c1"># numérateur : &lt;i.j&gt;</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">j</span><span class="o">.</span><span class="n">transpose</span><span class="p">())[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+        <span class="c1"># dénominateur : ||i||_2 * ||j||_2</span>
+    <span class="n">den</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">todense</span><span class="p">())</span> <span class="o">*</span> <span class="n">norm</span><span class="p">(</span><span class="n">j</span><span class="o">.</span><span class="n">todense</span><span class="p">())</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">den</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">):</span> <span class="c1"># on vérifie que le dénominateur n'est pas nul</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">num</span><span class="o">/</span><span class="n">den</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">0</span>
     
 <span class="c1"># retourne les *nb_top_docs* documents les plus similaires à la requête *query* dans la matrice *D*</span>
 <span class="c1"># *features* est associé au vocabulaire construit par la librairie</span>
-<span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">nb_top_docs</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">nb_top_docs</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">indexes</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">features</span> <span class="o">==</span> <span class="n">q</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">query</span> <span class="k">if</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">features</span><span class="p">]</span>
     <span class="n">query_vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">features</span><span class="p">))</span>
     <span class="n">query_vec</span><span class="p">[</span><span class="n">indexes</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">cc</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">cosinus</span><span class="p">(</span><span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:],</span> <span class="n">query_vec</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_docs</span><span class="p">)}</span>
+    <span class="n">query_vec</span> <span class="o">=</span> <span class="n">csr_matrix</span><span class="p">(</span><span class="n">query_vec</span><span class="p">)</span>
+    <span class="n">cc</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">cosinus</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">query_vec</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_docs</span><span class="p">)}</span>
     <span class="n">cc</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">cc</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">cc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">nb_top_docs</span><span class="p">]</span>    
 
@@ -7840,8 +7841,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">D</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
-<span class="n">n_docs</span><span class="p">,</span> <span class="n">n_terms</span> <span class="o">=</span> <span class="n">D</span><span class="o">.</span><span class="n">shape</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">n_docs</span><span class="p">,</span> <span class="n">n_terms</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
@@ -7855,8 +7855,11 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">tf_sum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">top_feats</span><span class="p">(</span><span class="n">tf_sum</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">top_n</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># on fait la somme sur toutes les lignes pour chacun des mots</span>
+<span class="n">tf_sum</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">tf_sum</span> <span class="o">=</span> <span class="n">tf_sum</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># conversion en liste</span>
+
+<span class="n">print_feats</span><span class="p">(</span><span class="n">tf_sum</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">top_n</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7881,7 +7884,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">concord</span><span class="p">(</span><span class="n">toute_la_chaine</span><span class="p">,</span> <span class="n">mots</span> <span class="o">/</span> <span class="n">suite</span> <span class="n">de</span> <span class="n">mots</span> <span class="n">à</span> <span class="n">rechercher</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">concord</span><span class="p">(</span><span class="n">toute_la_chaine</span><span class="p">,</span> <span class="s2">"mots / suite de mots à rechercher"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7936,7 +7939,7 @@ Pensez par exemple à des requêtes utilisant des mots très fréquents et d'aut
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">requete</span> <span class="o">=</span> <span class="c1"># à compléter</span>
-<span class="n">resultat</span> <span class="o">=</span> <span class="n">search</span><span class="p">(</span><span class="n">requete</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">features</span><span class="p">)</span> <span class="c1"># où D est la matrice des données et features la liste des mots du vocabulaire</span>
+<span class="n">resultat</span> <span class="o">=</span> <span class="n">search</span><span class="p">(</span><span class="n">requete</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">features</span><span class="p">)</span> <span class="c1"># où X est la matrice des données et features la liste des mots du vocabulaire</span>
 <span class="n">print_docs</span><span class="p">(</span><span class="n">resultat</span><span class="p">)</span>
 </pre></div>
 </div>
