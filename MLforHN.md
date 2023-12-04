@@ -18,6 +18,8 @@ Julien Velcin, Université Lyon 2 - Master Humanités Numériques
 
 - corpus possibles : [Alice au pays des merveilles](https://velcin.github.io/files/HN/data/alice.txt), [L'île au trésor](https://velcin.github.io/files/HN/data/treasure.txt)
 
+- liste de mots outils : [mots outils français](https://velcin.github.io/files/HN/stop/Stop-words-french), [mots outils anglais](https://velcin.github.io/files/HN/stop/Stop-words-en)
+
 ### Partie 2 : classification supervisée
 
 **Objectif :** utilisation d'algorithmes de classification, mesure des performances (différents types d'erreur)
