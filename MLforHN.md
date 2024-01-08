@@ -38,6 +38,8 @@ Julien Velcin, Université Lyon 2 - Master Humanités Numériques
 
 - Introduction aux grands modèles de langue : [slides](https://velcin.github.io/files/HN/LLMs.pdf)
 
+- Article de vulgarisation sur ChatGPT : [lien](https://generationia.flint.media/p/secrets-techniques-chatgpt-bard-claude)
+
 - courte démo pour utiliser des plongements (embedding) avec la librairie Spacy : [export html](https://velcin.github.io/files/HN/TD3_M2_HN.html), [notebook ipynb](https://velcin.github.io/files/HN/TD3_M2_HN.ipynb)
 
 - classification de critiques de film à l'aide d'un modèle déjà affiné : [lien google collab](https://colab.research.google.com/drive/17wdal6LOhU47fVQGwqUWQxJMliQK72Nk?usp=sharing)
