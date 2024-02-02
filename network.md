@@ -1,6 +1,6 @@
 # Analysis of Information Networks
 
-Julien Velcin, Université Lyon 2 - Master Humanités Numériques
+Julien Velcin, Université Lyon 2 - Masters MALIA et MIASHS
 
 ## Supports de cours
 
