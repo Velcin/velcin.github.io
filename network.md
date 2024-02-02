@@ -7,6 +7,13 @@ Il s'agit par exemple des réseaux/médias sociaux ou des bases de données bibl
 Pour ce type de données, il faut réussir à modéliser la partie textuelle (l'information attachée aux noeuds ou aux liens) et la partie structurelle (le réseau).
 Cela permet ensuite de résoudre des problèmes de classification (des noeuds, des graphes), de clustering (détection de communauté), de prédiction de liens entre les noeuds, de recherche d'information.
 
+**Plan du cours**
+
+- introduction générale à l'analyse des réseaux d'information
+- traitement des données textuelles (prétraitements, représentation vectorielle des documents, modélisation thématique, visualisation, recherche par mots-clefs)
+- traitement du réseau (modélisation à l'aide de graphes, visualisation, calcul de scores de centralité, classification et clustering)
+- traitement conjoint du texte et de la structure via les GNNs
+
 ## Supports de cours
 
 - introduction générale au cours : [slides](https://velcin.github.io/files/NA/part1_introduction.pdf)
