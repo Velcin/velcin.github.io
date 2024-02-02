@@ -11,7 +11,7 @@ Julien Velcin, Université Lyon 2 - Master Humanités Numériques
 
 ## Ressources supplémentaires
 
-- Généralités sur les matrices (HEC Montreal) : [extrait](https://velcin.github.io/files/NA/Generalites_sur_matrices)
+- Généralités sur les matrices (HEC Montreal) : [extrait](https://velcin.github.io/files/NA/Generalites_sur_matrices.pdf)
 - Graph Representation Learning (W.L. Hamilton): [book](https://velcin.github.io/files/NA/GRL_Book.pdf)
 - Cours de J. Ah-Pine : [extrait](https://velcin.github.io/files/NA/extrait_CM_AHPINE.pdf)
 - Présentation A. Guille à l'atelier TextMine : [slides](https://velcin.github.io/files/NA/GUILLE_textmine2023.pdf)
@@ -23,7 +23,7 @@ Julien Velcin, Université Lyon 2 - Master Humanités Numériques
 ## Notebooks
 
 - prétraitement du texte 1 : [slides](https://velcin.github.io/files/NA/1.1_text1.html)
-- prétraitement du texte 2 : [slides](https://velcin.github.io/files/NA/1.1_text2.html)
+- prétraitement du texte 2 : [slides](https://velcin.github.io/files/NA/1.2_text2.html)
 - représentation vectoriel du texte 1 : [slides](https://velcin.github.io/files/NA/2.1_vect1.html)
 - représentation vectoriel du texte 2 : [slides](https://velcin.github.io/files/NA/2.2_vect2.html)
 - représentation vectoriel du texte 3 : [slides](https://velcin.github.io/files/NA/2.3_vect3.html)
@@ -34,10 +34,16 @@ Julien Velcin, Université Lyon 2 - Master Humanités Numériques
 - graphes 2 : [slides](https://velcin.github.io/files/NA/4.2_graph2.html)
 - graphes 3 : [slides](https://velcin.github.io/files/NA/4.3_graph3.html)
 
-## Autre
+## Projet
 
-- Learning on Graphs Conference : https://logconference.org
-- A Network Map of The Witcher : https://nightingaledvs.com/a-network-map-of-the-witcher/
-- Understanding Convolutions on Graphs : https://distill.pub/2021/understanding-gnns/
-- GCN avec code : https://towardsdatascience.com/understanding-graph-convolutional-networks-for-node-classification-a2bfdb7aba7b
-- Graph Neural Networks: Geometric, Structural and Algorithmic Perspectives, Part 1 (P. Veličković): https://www.youtube.com/watch?v=pL5Nc8Axv5A
+- [consignes générales](https://velcin.github.io/files/NA/consignes_2023.pdf)
+- cas d'étude MALIA (à venir)
+- cas d'étude MIASHS (à venir)
+
+## Liens
+
+- [Learning on Graphs Conference](https://logconference.org)
+- [A Network Map of The Witcher](https://nightingaledvs.com/a-network-map-of-the-witcher/)
+- [Understanding Convolutions on Graphs](https://distill.pub/2021/understanding-gnns/)
+- [GCN avec code](https://towardsdatascience.com/understanding-graph-convolutional-networks-for-node-classification-a2bfdb7aba7b)
+- [Graph Neural Networks: Geometric, Structural and Algorithmic Perspectives, Part 1 (P. Veličković)](https://www.youtube.com/watch?v=pL5Nc8Axv5A)
