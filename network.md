@@ -2,6 +2,11 @@
 
 Julien Velcin, Université Lyon 2 - Masters MALIA et MIASHS
 
+Ce cours traite de l'analyse des réseaux d'information, plus spécifiquement lorsque ceux-ci sont modélisés sous la forme de graphes comportant des informations véhiculées en langage naturel.
+Il s'agit par exemple des réseaux/médias sociaux ou des bases de données bibliographiques.
+Pour ce type de données, il faut réussir à modéliser la partie textuelle (l'information attachée aux noeuds ou aux liens) et la partie structurelle (le réseau).
+Cela permet ensuite de résoudre des problèmes de classification (des noeuds, des graphes), de clustering (détection de communauté), de prédiction de liens entre les noeuds, de recherche d'information.
+
 ## Supports de cours
 
 - introduction générale au cours : [slides](https://velcin.github.io/files/NA/part1_introduction.pdf)
