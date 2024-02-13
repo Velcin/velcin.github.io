@@ -49,7 +49,7 @@ Cela permet ensuite de résoudre des problèmes de classification (des noeuds, d
 ## Projet
 
 - [consignes générales](https://velcin.github.io/files/NA/consignes_2023.pdf)
-- [cas d'étude MALIA](https://velcin.github.io/files/NA/cas_etude_MALIA.pdf) [données](https://filesender.renater.fr/?s=download&token=9b69c562-d1bd-45a7-961b-717b6b4a6df0)
+- [cas d'étude MALIA](https://velcin.github.io/files/NA/cas_etude_MALIA.pdf) [données](https://filesender.renater.fr/?s=download&token=e90dbac7-d0b7-4c22-9dc5-5730e4046438)
 - [cas d'étude MIASHS](https://velcin.github.io/files/NA/cas_etude_MIASHS.pdf) [données](https://velcin.github.io/files/NA/data_MIASHS.zip)
 
 ## Liens
