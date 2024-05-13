@@ -31,7 +31,7 @@ Datasets :
 2 notes :
 
 - VENDREDI 17 MAI : envoi du travail réalisé jusqu'à présent à mon adresse email (travail réalisé à minima jusqu'au TD4)
-- JEUDI 30 MAI : envoi du travail complété (un travail plus abouti est attendu, qui va jusqu'au bout du TD7)
+- JEUDI 13 JUIN : envoi du travail complété (un travail plus abouti est attendu, qui va jusqu'au bout du TD7)
 
 # Répertoire de liens utiles en Python
 
