@@ -1,4 +1,4 @@
-# Ressources pour le cours de Programmation Orientée Objets, Master IDSM 2022-2023
+# Ressources pour le cours de Programmation Orientée Objets, Master IDSM 2023-2024
 
 Ces ressources sont mises à disposition pour les étudiants inscrits au Master IDSM.
 
@@ -16,7 +16,7 @@ Ces ressources sont mises à disposition pour les étudiants inscrits au Master 
 - MERCREDI : [TD4](https://velcin.github.io/files/python/td4.pdf)
 - JEUDI : [TD5](https://velcin.github.io/files/python/td5.pdf)
 - VENDREDI : [TD6](https://velcin.github.io/files/python/td6.pdf)
-- SAMEDI : [TD7](https://velcin.github.io/files/python/td7.pdf)
+- MARDI : [TD7](https://velcin.github.io/files/python/td7.pdf)
 
 Datasets :
 
@@ -30,8 +30,8 @@ Datasets :
 
 2 notes :
 
-- SAMEDI 17 JUIN : envoi du travail réalisé jusqu'à présent à mon adresse email (travail réalisé à minima jusqu'au TD4)
-- VENDREDI 23 JUIN : envoi du travail complété (un travail plus abouti est attendu, qui va jusqu'au bout du TD7
+- VENDREDI 17 MAI : envoi du travail réalisé jusqu'à présent à mon adresse email (travail réalisé à minima jusqu'au TD4)
+- JEUDI 30 MAI : envoi du travail complété (un travail plus abouti est attendu, qui va jusqu'au bout du TD7)
 
 # Répertoire de liens utiles en Python
 
