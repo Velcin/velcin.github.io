@@ -13,7 +13,7 @@ Ces ressources sont mises à disposition pour les étudiants inscrits à la form
 
 - [TD1 (notebook)](https://velcin.github.io/files/python/TD1_UdL-TBC.ipynb)
 - [TD2 (notebook)](https://velcin.github.io/files/python/TD2_UdL-TBC.ipynb)
-- [TD3 (notebook)] A venir
+- [TD3 (notebook)](https://velcin.github.io/files/python/TD3_UdL-TBC.ipynb)
 
 Datasets :
 
@@ -22,6 +22,7 @@ Datasets :
 - Mots outils : [français](https://velcin.github.io/files/python/datasets/Stop-words-french.txt), [anglais](https://velcin.github.io/files/python/datasets/Stop-words-english.txt)
 - [Holy Grail](https://velcin.github.io/files/python/datasets/holygrail.txt)
 - [Grand débat (extrait)](https://velcin.github.io/files/python/datasets/gd_qui.csv)
+- [Données toxiques](https://velcin.github.io/files/python/datasets/toxic_10k.csv)
 
 # Répertoire de liens utiles en Python
 
