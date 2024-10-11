@@ -10,11 +10,7 @@ Julien Velcin, Université Lyon 2 - Master Humanités Numériques
 
 - introduction générale au cours : [slides](https://velcin.github.io/files/HN/introduction.pdf)
 
-- présentation ARIANE : [slides](https://velcin.github.io/files/HN/pres_velcin_ARIANE.pdf)
-
-- présentation AFIA : [slides](https://velcin.github.io/files/HN/pres_velcin_AFIA.pdf)
-
-- présentation LIFRANUM : [slides](https://velcin.github.io/files/HN/pres_velcin_LIFRANUM.pdf)
+- plusieurs présentations autour des humanités numériques et du traitement automatique des textes :  [présentation ARIANE](https://velcin.github.io/files/HN/pres_velcin_ARIANE.pdf), [présentation AFIA](https://velcin.github.io/files/HN/pres_velcin_AFIA.pdf), [présentation LIFRANUM](https://velcin.github.io/files/HN/pres_velcin_LIFRANUM.pdf)
 
 - représentation pour les données textuelles : [slides](https://velcin.github.io/files/HN/representation-textes.pdf)
 
