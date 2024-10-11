@@ -16,7 +16,9 @@ Julien Velcin, Université Lyon 2 - Master Humanités Numériques
 
 - introduction à la recherche d'information pour les données textuelles (approches traditionnelles) : [export en html](https://velcin.github.io/files/HN/TD1_M2_HN.html), [notebook](https://velcin.github.io/files/HN/TD1_M2_HN.ipynb)
 
-- rendu n°1 : réalisation d'un moteur de recherche : [consignes rendu 1 (html)](https://velcin.github.io/files/HN/rendu1-squelette.html), [consignes rendu 1 (notebook ipynb)](https://velcin.github.io/files/HN/rendu1-squelette.ipynb)
+- rendu n°1 : (à venir)
+
+[comment]: réalisation d'un moteur de recherche : [consignes rendu 1 (html)](https://velcin.github.io/files/HN/rendu1-squelette.html), [consignes rendu 1 (notebook ipynb)](https://velcin.github.io/files/HN/rendu1-squelette.ipynb)
 
 - corpus possibles : [Alice au pays des merveilles](https://velcin.github.io/files/HN/data/alice.txt), [L'île au trésor](https://velcin.github.io/files/HN/data/treasure.txt)
 
@@ -32,7 +34,9 @@ Julien Velcin, Université Lyon 2 - Master Humanités Numériques
 
 - jeu de données de messages toxiques (extrait): [toxic_10k.csv](https://velcin.github.io/files/HN/data/toxic_10k.csv)
 
-- rendu n°2 : classification de critiques de film : [consignes](https://velcin.github.io/files/HN/rendu2-classification.html), [allocine_3k.csv](https://velcin.github.io/files/HN/data/allocine_3k.csv)
+- rendu n°2 : (à venir)
+
+[comment]: classification de critiques de film : [consignes](https://velcin.github.io/files/HN/rendu2-classification.html), [allocine_3k.csv](https://velcin.github.io/files/HN/data/allocine_3k.csv)
 
 ### Partie 3 : vers les grands modèles de langue
 
