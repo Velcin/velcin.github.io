@@ -50,7 +50,10 @@ Julien Velcin, Université Lyon 2 - Master Humanités Numériques
 
 - classification de critiques de film à l'aide d'un modèle déjà affiné : [lien google collab](https://colab.research.google.com/drive/17wdal6LOhU47fVQGwqUWQxJMliQK72Nk?usp=sharing)
 
-- prédiction de mots masqués avec CamemBERTa : [lien google collab](https://colab.research.google.com/drive/1_79HH-HL94ctMgjv56qngdBoyw0q3_1P?usp=sharing)
+[comment]: - prédiction de mots masqués avec CamemBERTa : [lien google collab](https://colab.research.google.com/drive/1_79HH-HL94ctMgjv56qngdBoyw0q3_1P?usp=sharing)
+
+- utilisation de Mistral pour générer du texte, y compris pour répondre à des questions sur un corpus de son choix (principe RAG) : [export html](https://velcin.github.io/files/HN/Mistral.html), [notebook ipynb](https://velcin.github.io/files/HN/Mistral.ipynb)
+
 
 - système de Questions-Réponses : [lien google collab](https://colab.research.google.com/drive/18mogNkH6ou2eAxquN43hJKxgjRx2KbpN?usp=sharing)
 
