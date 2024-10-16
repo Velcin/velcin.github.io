@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Mistral</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Ollama</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7510,429 +7510,108 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=81bae70d-0b59-43eb-a47a-bf71a002623b">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c28552bb-f089-4780-b7d0-6e824e74bf45">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Mise-en-oeuvre-du-mod%C3%A8le-Mistral-Large-(123B-param%C3%A8tres-?)">Mise en oeuvre du modèle Mistral Large (123B paramètres ?)<a class="anchor-link" href="#Mise-en-oeuvre-du-mod%C3%A8le-Mistral-Large-(123B-param%C3%A8tres-?)">¶</a></h1><p>Julien Velcin, Université Lyon 2 - Master Humanités Numériques</p>
-<p>Plus de détails sur le modèle : <a href="https://mistral.ai/fr/news/mistral-large/">https://mistral.ai/fr/news/mistral-large/</a></p>
-<p>La partie RAG suit le traitement proposé ici : <a href="https://docs.mistral.ai/guides/rag/">https://docs.mistral.ai/guides/rag/</a></p>
-<p>Il est possible d'affiner (fine tune) ce type de modèle, y compris via l'API si on n'a pas assez de ressources de calcul en local, mais ce ne sera pas vu dans ce cours : <a href="https://docs.mistral.ai/guides/finetuning/">https://docs.mistral.ai/guides/finetuning/</a></p>
+<h1 id="Mise-en-place-d'une-solution-locale-pour-traitement-par-un-LLM">Mise en place d'une solution locale pour traitement par un LLM<a class="anchor-link" href="#Mise-en-place-d'une-solution-locale-pour-traitement-par-un-LLM">¶</a></h1><p>Julien Velcin, Université Lyon 2 - Master Humanités Numériques</p>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9f71de07-ff3d-4da4-b056-3113040d17d9">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=be6080f9-52f2-455f-a2db-f245ecb8339e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Ce qui suit est une démonstration de l'utilisation de l'API de Mistral, comme alternative aux modèles de référence comme GPT. A noter qu'il est possible, en plus de faire de la génération à partir de prompt et des données de préentrainement du modèle, de suivre le principe RAG (Retrieval Augmented Generation) afin de coupler ça avec une base de données qui a été indexée.</p>
+<p>Cette solution se base sur <a href="https://ollama.com">ollama</a>. Il est nécessaire d'installer l'application qui va aussi installer la ligne de commande <em>ollama</em>, puis la librairie Python du même nom via <em>pip</em>.</p>
+<p>Dans l'exemple ci-dessous, nous allons utiliser l'un des modèles proposés : llama3.1. Il faut donc le télécharger localement sur votre machine via la commande suivante dans un terminal : <em>ollama pull llama3.1</em></p>
+<p>Pour l'encodage du sens des documents, il faut installer la librairie <em>sentence_transformers</em>.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3a86e29f-5e89-4f62-8bea-d8ec6093ab46">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=f85157bf-03f8-4740-843b-3ad2b9b517de">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [61]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># librairies utilisées</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#On importe les librairies utiles</span>
 
+<span class="kn">import</span> <span class="nn">ollama</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">cosine_similarity</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">tqdm.autonotebook</span> <span class="kn">import</span> <span class="n">tqdm</span><span class="p">,</span> <span class="n">trange</span>
+<span class="kn">from</span> <span class="nn">sentence_transformers</span> <span class="kn">import</span> <span class="n">SentenceTransformer</span>
 <span class="kn">import</span> <span class="nn">faiss</span>
-<span class="kn">import</span> <span class="nn">pickle</span>
-<span class="kn">import</span> <span class="nn">faiss.contrib.torch_utils</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5cf64b44-9115-47c1-a505-437ae410ddfe">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d8575bf7-ca75-41be-ad7f-29dcbb534977">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Tout d'abord, il s'agit de charger la clef d'accès à l'API de Mistral (gratuit pour une utilisation individuelle mais potentiellement limitée).</p>
+<p>Pour travailler uniquement en local, on a besoin d'un modèle de type <em>Sentence Transformer</em> pour plonger les documents. L'un des plus performants aujourd'hui est peut-être <em>bget-small-en</em> et il en existe spécialisés sur le français.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=dbc85de4-23c7-47cc-9b26-d46016dcd8c9">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=7628e919-11c1-42b5-8112-5fc01a73c633">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">"MISTRAL_KEY_API"</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span>  <span class="n">SentenceTransformer</span><span class="p">(</span><span class="s2">"ggrn/bge-small-en"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=200fef28-a4cc-4687-b3a6-b5f178b488b9">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b82c18aa-04f9-4515-9b71-fb906b52a668">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Après avoir <a href="https://docs.mistral.ai/getting-started/clients/">installé la librairie <em>mistralai</em></a>, vous pouvez la charger en mémoire et choisir votre modèle.</p>
+<p>Chargement du corpus, comme d'habitude mais en imposant une taille minimum aux documents/paragraphes.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=19a11d85-df8c-4806-89a2-cbf9153a50b9">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=eb099a28-2cd3-423d-b1a1-29ad9df1544c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">mistralai</span> <span class="kn">import</span> <span class="n">Mistral</span>
-
-<span class="c1"># choix du modèle (ici la version large)</span>
-<span class="n">model</span> <span class="o">=</span> <span class="s2">"mistral-large-latest"</span>
-
-<span class="n">client</span> <span class="o">=</span> <span class="n">Mistral</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">api_key</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=61105d84-a57e-4c99-a4ef-1787eb40e5d8">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Pour commencer, quelques tests simples d'autocomplétion, en anglais...</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=38054bc1-4921-481e-9fcc-f9ad916e5d54">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">chat_response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">complete</span><span class="p">(</span>
-    <span class="n">model</span><span class="o">=</span> <span class="n">model</span><span class="p">,</span>
-    <span class="n">messages</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="c1"># "rôle" que va jouer le robot (liste à choix fermée)</span>
-            <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"What is the best French cheese?"</span><span class="p">,</span> <span class="c1"># la question</span>
-        <span class="p">},</span>
-    <span class="p">]</span>
-<span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">chat_response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Choosing the "best" French cheese can be subjective, as it depends on personal taste. France is renowned for its wide variety of cheeses, with over 400 different types. Here are a few highly regarded French cheeses across various categories:
-
-1. **Soft Cheeses**:
-   - **Brie de Meaux**: Known for its creamy texture and rich, slightly nutty flavor.
-   - **Camembert de Normandie**: Soft and creamy with a strong, earthy aroma.
-
-2. **Semi-Soft Cheeses**:
-   - **Morbier**: Recognizable by its layer of ash in the middle, it has a fruity and slightly nutty taste.
-   - **Reblochon**: A nutty and fruity cheese from the Alps, often used in tartiflette.
-
-3. **Hard Cheeses**:
-   - **Comté**: A firm, nutty, and slightly sweet cheese made from unpasteurized cow's milk.
-   - **Beaufort**: Similar to Comté, it has a firm texture and a complex, nutty flavor.
-
-4. **Blue Cheeses**:
-   - **Roquefort**: A tangy and salty sheep milk cheese with distinctive veins of blue mold.
-   - **Bleu d'Auvergne**: A strong, pungent cow's milk blue cheese with a moist, crumbly texture.
-
-5. **Goat Cheeses**:
-   - **Chèvre (Goat Cheese)**: Available in many forms, from fresh and soft to aged and crumbly, often with a tangy flavor.
-   - **Crottin de Chavignol**: A small, circular goat cheese that can be soft and mild when young, or firm and nutty when aged.
-
-Each of these cheeses has its unique characteristics, so the "best" one depends on your preferences. It's always fun to try a variety to discover your favorite!
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b66ed256-b321-49a5-be6b-3e6f82014f1f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>...et en français :</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c8b15cca-b672-4938-86c4-4899e7ee006a">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">chat_response_fr</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">complete</span><span class="p">(</span>
-    <span class="n">model</span><span class="o">=</span> <span class="n">model</span><span class="p">,</span>
-    <span class="n">messages</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span>
-            <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"La réponse s'adresse à un locuteur français. Quel est le meilleur fromage ?"</span><span class="p">,</span>
-        <span class="p">},</span>
-    <span class="p">]</span>
-<span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">chat_response_fr</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>La question du "meilleur fromage" est très subjective et dépend des goûts personnels de chacun. La France, par exemple, est célèbre pour sa grande variété de fromages, chacun ayant ses propres caractéristiques et saveurs. Voici quelques fromages français très appréciés :
-
-1. **Camembert** : Un fromage à pâte molle et à croûte fleurie, originaire de Normandie.
-2. **Roquefort** : Un fromage persillé (à pâte bleue) fabriqué à partir de lait de brebis, originaire de l'Aveyron.
-3. **Brie de Meaux** : Un fromage à pâte molle et à croûte fleurie, souvent considéré comme le "roi des fromages".
-4. **Comté** : Un fromage à pâte pressée cuite, originaire du Jura et de la Franche-Comté.
-5. **Reblochon** : Un fromage à pâte pressée non cuite, originaire de la Savoie et de la Haute-Savoie.
-6. **Chèvre** : Il existe de nombreuses variétés de fromages de chèvre, comme le Crottin de Chavignol ou le Sainte-Maure de Touraine.
-
-Chacun de ces fromages a ses propres caractéristiques et peut être apprécié de différentes manières. Le "meilleur" fromage est donc celui que vous préférez personnellement !
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=02a791b5-e212-4d2c-b66c-de8b33fa5090">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>On peut aussi demander à un modèle proche de fournir les plongements (<em>embeddings</em>) de textes :</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=1f959bc2-6763-4c75-ae22-4f7843f3e9b7">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">model_emb</span> <span class="o">=</span> <span class="s2">"mistral-embed"</span>
-
-<span class="n">client</span> <span class="o">=</span> <span class="n">Mistral</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">api_key</span><span class="p">)</span>
-
-<span class="n">embeddings_response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">embeddings</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-    <span class="n">model</span><span class="o">=</span><span class="n">model_emb</span><span class="p">,</span>
-    <span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="s2">"Un fromage à pâte pressée cuite, originaire du Jura et de la Franche-Comté."</span><span class="p">,</span>
-            <span class="s2">"Il existe de nombreuses variétés de fromages de chèvre, comme le Crottin de Chavignol ou le Sainte-Maure de Tourain."</span><span class="p">,</span>
-           <span class="s2">"Le pithiviers est un gâteau français à base de pâte feuilletée originaire de la commune de Pithiviers située dans le département du Loiret et la région Centre-Val de Loire."</span><span class="p">,</span>
-           <span class="s2">"Le château de Versailles est un château et un monument historique français situé à Versailles, dans les Yvelines."</span><span class="p">]</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9ef6a878-8d96-4548-b3f6-21e7beceb6f3">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">vectors</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">embedding</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">embeddings_response</span><span class="o">.</span><span class="n">data</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vectors</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>4
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=256016c9-81cc-46fb-9d0c-a440094b2fba">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [54]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># similarité cosinus entre deux vecteurs sous numpy</span>
-<span class="k">def</span> <span class="nf">cosine</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">cosine_similarity</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">y</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">squeeze</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=58722edb-6fe2-4ec1-868b-87b5124bf615">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [55]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Similarité cosinus : </span><span class="si">{</span><span class="n">cosine</span><span class="p">(</span><span class="n">vectors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">vectors</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> "</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Similarité cosinus : 0.830 
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=251a05f3-bcd4-4164-9ebe-355ca0b93329">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Combiner-Mistral-avec-du-RAG">Combiner Mistral avec du RAG<a class="anchor-link" href="#Combiner-Mistral-avec-du-RAG">¶</a></h1>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1973e143-650b-4a52-bb52-b104910aac45">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Le RAG (<em>Retrieval Augmented Generation</em>) permet de combiner la recherche d'information (pour trouver les meilleurs passages) et la génération d'une réponse.</p>
-<p>La solution présentée ici ne recourt pas à des librairies comme Langchain ou LlamaIndex, que nous ne verrons pas en cours, mais beaucoup de ressources en ligne en parlent très bien (comme : <a href="https://docs.mistral.ai/guides/rag/">https://docs.mistral.ai/guides/rag/</a>).</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=756af9a5-3beb-471a-aab9-85da39b692eb">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Chargement des données textuelles à partir d'un fichier (cf. début du cours) :</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5801ce8c-1141-45fe-8475-bc9dbdebcc5d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">"data"</span><span class="p">,</span> <span class="s2">"alice.txt"</span><span class="p">))</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>    
     <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span><span class="si">}</span><span class="s2"> lignes dans le fichier texte"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>5777 lignes dans le fichier texte
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=73ffd833-ecc7-4f73-b601-e2ada56b294b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>On combine les lignes pour produire un corpus de paragraphes (il faut éviter les documents vides).</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=dbee879e-6c04-46b3-b292-ee25d71ca567">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">docs</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">docs</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">s</span> <span class="o">=</span> <span class="s2">""</span>
 <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">!=</span> <span class="s2">""</span><span class="p">):</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">l</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">s</span> <span class="o">!=</span> <span class="s2">""</span><span class="p">):</span>
-            <span class="n">docs</span> <span class="o">=</span> <span class="n">docs</span> <span class="o">+</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">))</span><span class="o">&gt;</span><span class="mi">5</span><span class="p">:</span> <span class="c1"># ici, il faut au moins 5 mots dans le paragraphe</span>
+                <span class="n">docs</span> <span class="o">=</span> <span class="n">docs</span> <span class="o">+</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span>
             <span class="n">s</span> <span class="o">=</span> <span class="s2">""</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span><span class="si">}</span><span class="s2"> paragraphes"</span><span class="p">)</span>
@@ -7948,190 +7627,61 @@ Chacun de ces fromages a ses propres caractéristiques et peut être apprécié 
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>2033 paragraphes
+<pre>5777 lignes dans le fichier texte
+916 paragraphes
 </pre>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=657ad50a-47c1-40a0-88a5-387e27079535">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>On choisit le modèle d'embedding et on initialise le modèle (comme tout à l'heure).</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=fbd89c98-c49c-408f-aff9-fcbf1930d59a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=1c8ebe60-7067-41f7-9b89-2d58836e115d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">model_emb</span> <span class="o">=</span> <span class="s2">"mistral-embed"</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">build_embedding</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># mettre True la première fois pour calculer et sauvegarder les plongements</span>
 
-<span class="n">client</span> <span class="o">=</span> <span class="n">Mistral</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">api_key</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fe1bac49-ee24-4c50-9479-0cc3a4abe65b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Si la base de données vectorielle n'a pas été créée, il faut le faire (cela peut prendre du temps). Attribuer alors valeur <em>True</em> à la variable <em>build_embeddings</em> pour lancer le travail avec l'API.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1170e5ef-2987-4d75-a601-4625883fec43">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [90]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">build_embeddings</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># mettre True pour recalculer tous les plongements</span>
-
-<span class="k">if</span> <span class="n">build_embeddings</span><span class="p">:</span>
-
-    <span class="n">text_embeddings</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">docs_2processed</span> <span class="o">=</span> <span class="n">docs</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">build_embedding</span><span class="p">:</span>
     
-    <span class="n">step</span> <span class="o">=</span> <span class="mi">512</span> <span class="c1"># nombre de documents traités à la fois (à priori, max 512 pour Mistral large)</span>
+    <span class="n">steps</span> <span class="o">=</span> <span class="mi">200</span> <span class="c1"># nombre de documents traités à la fois</span>
+    
+    <span class="n">embeddings_full</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">docs</span><span class="p">),</span> <span class="mi">384</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="c1"># 384 est la taille des plongements</span>
 
-    <span class="k">while</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">docs_2processed</span><span class="p">)</span><span class="o">&gt;</span><span class="n">step</span><span class="p">):</span>
-        <span class="c1"># liste des documents à traiter</span>
-        <span class="n">liste_docs</span> <span class="o">=</span> <span class="n">docs_2processed</span><span class="p">[:</span><span class="n">step</span><span class="p">]</span>
+    <span class="n">num_batches</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span><span class="o">/</span><span class="n">steps</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">batch_num</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">num_batches</span><span class="p">)):</span>
 
-        <span class="c1">#on demande à l'API de calculer les vecteurs</span>
-        <span class="n">embeddings_response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">embeddings</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-            <span class="n">model</span><span class="o">=</span><span class="n">model_emb</span><span class="p">,</span>
-            <span class="n">inputs</span> <span class="o">=</span> <span class="n">liste_docs</span>
-        <span class="p">)</span>
-
-        <span class="c1"># on ajoute à la liste des vecteurs déjà calculés les nouveaux plongeements</span>
-        <span class="n">text_embeddings</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">embedding</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">embeddings_response</span><span class="o">.</span><span class="n">data</span><span class="p">])</span>
-
-        <span class="c1"># on décale le "curseur" sur la liste de traitement</span>
-        <span class="n">docs_2processed</span> <span class="o">=</span> <span class="n">docs_2processed</span><span class="p">[</span><span class="n">step</span><span class="p">:]</span>
-        <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">liste_docs</span><span class="p">))</span>
-
-        <span class="c1"># petit temps de latence pour ne pas surcharger l'API</span>
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-
-    <span class="c1"># même traitement mais pour les derniers documents (liste de longueur &lt; step)</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">docs_2processed</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">):</span>
-        <span class="n">liste_docs</span> <span class="o">=</span> <span class="n">docs_2processed</span>
-        <span class="n">embeddings_response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">embeddings</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-            <span class="n">model</span><span class="o">=</span><span class="n">model_emb</span><span class="p">,</span>
-            <span class="n">inputs</span> <span class="o">=</span> <span class="n">liste_docs</span>
-        <span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">liste_docs</span><span class="p">))</span>
-        <span class="n">text_embeddings</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">embedding</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">embeddings_response</span><span class="o">.</span><span class="n">data</span><span class="p">])</span>
-
-    <span class="c1"># On construit une liste de tableau format numpy à partir de la liste des tableaux (c'est une simple concaténation)</span>
-    <span class="n">vectors_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">j</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">text_embeddings</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">i</span><span class="p">]</span> <span class="p">)</span>
-
-    <span class="c1"># On pense à sauvegarder le tableau de plongement dans un fichier sur le disque</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"save_emb_alice.pkl"</span><span class="p">,</span> <span class="s2">"wb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">vectors_list</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+        <span class="n">embeddings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">docs</span><span class="p">[</span><span class="n">batch_num</span><span class="o">*</span><span class="n">steps</span><span class="p">:(</span><span class="n">batch_num</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">steps</span><span class="p">],</span> <span class="n">show_progress_bar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">embeddings_full</span><span class="p">[</span><span class="n">batch_num</span><span class="o">*</span><span class="n">steps</span><span class="p">:(</span><span class="n">batch_num</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">steps</span><span class="p">]</span> <span class="o">=</span> <span class="n">embeddings</span>
+    
+    <span class="n">embeddings</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">docs</span><span class="p">[</span><span class="n">num_batches</span><span class="o">*</span><span class="n">steps</span><span class="p">:])</span>
+    <span class="n">embeddings_full</span><span class="p">[</span><span class="n">num_batches</span><span class="o">*</span><span class="n">steps</span><span class="p">:]</span> <span class="o">=</span> <span class="n">embeddings</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">"emb_alice"</span><span class="p">,</span> <span class="n">embeddings_full</span><span class="p">)</span>
+    
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">embeddings_full</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">"emb_alice.npy"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>512
-512
-512
-497
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=6dcedd74-1220-426f-bb45-830855e370ac">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c50946b3-67e3-4f9a-817e-5dc90faa22b6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">build_embeddings</span><span class="p">:</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"save_emb_alice.pkl"</span><span class="p">,</span> <span class="s2">"rb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">vectors_list</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a80c80b1-c8d5-4400-b2ad-c95d1ca87b2c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">vectors_list</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>(2033, 1024)</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d33d962e-1cf5-47ba-9851-f1c20d4920fa">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>A partir de là, on peut créer l'index de la base de données vectorielle grâce à la libaririe <em>faiss</em> :</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d8b8ec1f-5ef6-4da7-a033-007713794bd2">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [56]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">vectors_list_f32</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># A noter que l'index pourrait être, lui aussi, sauvegardé pour éviter de ré-indexer à chaque fois</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">embeddings_full</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 <span class="n">index</span> <span class="o">=</span> <span class="n">faiss</span><span class="o">.</span><span class="n">IndexFlatL2</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="o">.</span><span class="n">is_trained</span><span class="p">)</span>
-<span class="n">index</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">vectors_list_f32</span><span class="p">)</span>
+<span class="n">index</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">embeddings_full</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8144,7 +7694,7 @@ Chacun de ces fromages a ses propres caractéristiques et peut être apprécié 
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>1024
+<pre>384
 True
 </pre>
 </div>
@@ -8152,98 +7702,70 @@ True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5b1aa21f-f5cf-4d76-8fcf-ddfad2b9697a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=50f29d38-f016-4811-ab7b-836c0570e552">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Note : pour accélérer les choses, le mieux serait de sauvegarder cet index sur le disque et pas de le recalculer à chaque fois.</p>
+<p>On construit une fonction qui prend en entrée la question posée puis réalise tout le traitement, à savoir :</p>
+<ul>
+<li>plongement de la question = vecteur encodant le sens de la question (<em>embedding</em>)</li>
+<li>recherche dans l'index en précisant le nombre de documents retournés (paramètre k)</li>
+<li>mis au point de l'invite (<em>prompt</em>) en utilisant les documents retrouvés et la question</li>
+<li>interrogation du LLM via <em>ollama</em></li>
+<li>retourne la réponse</li>
+</ul>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e5279a89-3d49-431d-b52c-01e5a56d517f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Poser-des-questions-sur-les-donn%C3%A9es-textuelles">Poser des questions sur les données textuelles<a class="anchor-link" href="#Poser-des-questions-sur-les-donn%C3%A9es-textuelles">¶</a></h1>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2ee54a53-b7f9-479a-bcfb-7da6ba2ce9ad">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>A présent, on peut utiliser l'index pour poser n'importe quelle question.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=147896da-2e1d-4f41-8cb6-38edbf5205b7">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=39d576b1-a386-4650-8b8b-c177610405d1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [65]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">poser_une_question</span><span class="p">(</span><span class="n">question</span><span class="p">):</span>
-
-    <span class="c1"># création du plongement (=vecteur) correspondant à la question posée</span>
-    <span class="n">embeddings_response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">embeddings</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-        <span class="n">model</span><span class="o">=</span><span class="n">model_emb</span><span class="p">,</span>
-        <span class="n">inputs</span> <span class="o">=</span> <span class="n">question</span>
-    <span class="p">)</span>
-    <span class="n">question_embedding</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">embeddings_response</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">embedding</span><span class="p">])</span>
-
-    <span class="c1"># recherche d'information : on sélectionne les 2 documents ayant des vecteurs les plus similaires à la question (cf. TD1)</span>
-    <span class="n">D</span><span class="p">,</span> <span class="n">I</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">question_embedding</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">question_embedding</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">model</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">question</span><span class="p">)])</span>
+    <span class="n">D</span><span class="p">,</span> <span class="n">I</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">question_embedding</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
     <span class="n">retrieved_docs</span> <span class="o">=</span> <span class="p">[</span><span class="n">docs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">I</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">]]</span>
-
-    <span class="c1"># on crée l'invite (prompt) qui va nous permettre d'interroger le modèle de langue</span>
+    <span class="c1">#print(retrieved_docs) # à décommenter si vous voulez afficher les documents retrouvés</span>
     <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
-<span class="s2">        Context information is below.</span>
-<span class="s2">        ---------------------</span>
-<span class="s2">            </span><span class="si">{</span><span class="n">retrieved_docs</span><span class="si">}</span>
-<span class="s2">        ---------------------</span>
-<span class="s2">        Given the context information and not prior knowledge, answer the query.</span>
-<span class="s2">            Query: </span><span class="si">{</span><span class="n">question</span><span class="si">}</span>
-<span class="s2">        Answer:</span>
-<span class="s2">        """</span>
+<span class="s2">            Context information is below.</span>
+<span class="s2">            ---------------------</span>
+<span class="s2">                </span><span class="si">{</span><span class="n">retrieved_docs</span><span class="si">}</span>
+<span class="s2">            ---------------------</span>
+<span class="s2">            Given the context information and not prior knowledge, answer the query.</span>
+<span class="s2">                Query: </span><span class="si">{</span><span class="n">question</span><span class="si">}</span>
+<span class="s2">            Answer:</span>
+<span class="s2">            """</span>
     <span class="n">messages</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="n">prompt</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-    <span class="c1"># ajout d'un petit temps de latence pour éviter de surcharger l'API</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-
-    <span class="c1"># on lance la requête en ligne</span>
-    <span class="n">chat_response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">complete</span><span class="p">(</span>
-        <span class="n">model</span><span class="o">=</span><span class="s2">"mistral-large-latest"</span><span class="p">,</span>
-        <span class="n">messages</span><span class="o">=</span><span class="n">messages</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">chat_response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span> 
+            <span class="p">{</span>
+                <span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="n">prompt</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">ollama</span><span class="o">.</span><span class="n">chat</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s1">'llama3.1'</span><span class="p">,</span> <span class="n">messages</span><span class="o">=</span>
+            <span class="n">messages</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">response</span><span class="p">[</span><span class="s1">'message'</span><span class="p">][</span><span class="s1">'content'</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6c38591c-32a8-4271-ac75-febcdd84b3db">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7b8a38c1-59a2-462e-b878-9dd957df1ac7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [66]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">question1</span> <span class="o">=</span> <span class="s2">"What unexpected animal the duchess comes out carrying in baby's clothes?"</span>
 <span class="n">question2</span> <span class="o">=</span> <span class="s2">"What is the usual fate reserved for the queen's enemies?"</span>
+<span class="n">question3</span> <span class="o">=</span> <span class="s2">"Who carries the crown on a cushion?"</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">poser_une_question</span><span class="p">(</span><span class="n">question1</span><span class="p">))</span>
 </pre></div>
@@ -8258,51 +7780,13 @@ True
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>The Duchess comes out carrying a pig in baby's clothes.
+<pre>According to the provided context information, the Duchess comes out carrying a pig in baby's clothes. This is an unexpected and surprising sight, as one would not typically associate pigs with being dressed like babies!
 </pre>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=64627427-0149-4aca-b960-775bec995c7e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [67]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">poser_une_question</span><span class="p">(</span><span class="n">question2</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>The usual fate reserved for the queen's enemies is to be beheaded.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ba6b1d62-6817-4f2b-b528-59547b67c92f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Les réponses apportée semblent tout à fait pertinentes.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9d09819b-83e5-4611-b665-01e30b629c65">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8b8ea353-fb69-4ea0-b60d-bcc2838113b7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>

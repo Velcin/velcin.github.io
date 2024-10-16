@@ -52,9 +52,6 @@ Julien Velcin, Université Lyon 2 - Master Humanités Numériques
 
 [comment]: - prédiction de mots masqués avec CamemBERTa : [lien google collab](https://colab.research.google.com/drive/1_79HH-HL94ctMgjv56qngdBoyw0q3_1P?usp=sharing)
 
-- utilisation de Mistral pour générer du texte, y compris pour répondre à des questions sur un corpus de son choix (principe RAG) : [export html](https://velcin.github.io/files/HN/Mistral.html), [notebook ipynb](https://velcin.github.io/files/HN/Mistral.ipynb)
-
-
 - système de Questions-Réponses : [lien google collab](https://colab.research.google.com/drive/18mogNkH6ou2eAxquN43hJKxgjRx2KbpN?usp=sharing)
 
 - affinage de la famille BERT pour la classification : [lien google collab](https://colab.research.google.com/drive/1p1_Jv-KtyG4tpAyzhGlNYiNCOafakAEA?usp=sharing)
@@ -63,4 +60,8 @@ Julien Velcin, Université Lyon 2 - Master Humanités Numériques
 
 - génération simple de texte avec GPT2 : [lien google collab](https://colab.research.google.com/drive/1YAvRykmuNREzfiHTqc-O9qpEGumpbCUI?usp=sharing)
 
-- modèles génératifs plus avancés basés sur la librairie [OnPrem](https://pypi.org/project/onprem/) : [lien google collab](https://colab.research.google.com/drive/1LVeacsQ9dmE1BVzwR3eTLukpeRIMmUqi?usp=sharing)
+- utilisation de Mistral pour générer du texte, y compris pour répondre à des questions sur un corpus de son choix (principe RAG) : [export html](https://velcin.github.io/files/HN/Mistral.html), [notebook ipynb](https://velcin.github.io/files/HN/Mistral.ipynb)
+
+- mise au point du solution entièrement locale pour utiliser des LLMs : [export html](https://velcin.github.io/files/HN/Ollama.html), [notebook ipynb](https://velcin.github.io/files/HN/Ollama.ipynb)
+
+[comment]:- modèles génératifs plus avancés basés sur la librairie [OnPrem](https://pypi.org/project/onprem/) : [lien google collab](https://colab.research.google.com/drive/1LVeacsQ9dmE1BVzwR3eTLukpeRIMmUqi?usp=sharing)
