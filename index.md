@@ -35,7 +35,7 @@ Professor of Computer Science at the [University Lyon 2](https://www.univ-lyon2.
 
 # Teaching
 
-I give basic classes on computer science (e.g., programming) and more advanced classes in data science (e.g., artificial intelligence, machine learning, NLP). All my lectures are complemented by practical projects using various languages (python, R, C++).
+I teach foundational courses in computer science, such as programming, as well as advanced courses in data science, including artificial intelligence, machine learning, social media analysis, and natural language processing. All of my lectures are supplemented by practical projects that use various programming languages (eg., Python, R, C++). My primary audience consists of computer science students (BSc in Computer Science and MSc in Artificial Intelligence), but I also engage with interdisciplinary programs, such as the MSc in Digital Humanities and MSc related to computational social sciences.
 
 # Service
 
