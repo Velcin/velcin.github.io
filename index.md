@@ -27,8 +27,11 @@ Professor of Computer Science at the [University Lyon 2](https://www.univ-lyon2.
 
 # Recent talks
 
+- Peut-on représenter des auteurs dans un espace latent ? Recherches de similarité dans la production textuelle à l’aide de l'Intelligence Artificielle, Oct 24th 2024, talk for the closing conference of the LIFRANUM ANR projet: [slides](https://velcin.github.io/talks/pres-LIFRANUM.pdf)
+
+- Retour d'expérience sur des collaborations pluridisciplinaires entre Informatique et SHS, May 3rd 2024, invited talk for the Digital Humanities & AI days, jointly organized by AFIA and, GDR MADICS and MAGIS: [slides](https://velcin.github.io/talks/pres-AFIA.pdf)
+
 - DIKé project: some attempts to improve fairness in (compressed) language models, March 6th 2024, invited talk at the Workshop organized by the [ARENAS European project](https://arenasproject.eu): [slides](https://velcin.github.io/talks/talk-arenas.pdf)
-- IA pour la science des textes, Nov 8th 2023, Invited talk for the [Consortium-HN ARIANE](https://www.huma-num.fr/les-consortiums-hn/) : [slides](https://velcin.github.io/talks/presentation_VELCIN_ARIANE.pdf)
 
 # Teaching
 
@@ -37,8 +40,7 @@ I give basic classes on computer science (e.g., programming) and more advanced c
 # Service
 
 - Coordinator of the [Master of Computer Science](https://icom.univ-lyon2.fr/formation/filiere-informatique-statistique), University of Lyon 2 (head of the 1st year)
-- Coordinator of the [Pôle HuNIS](https://www.univ-lyon2.fr/universite/les-poles-de-specialites/pole-hunis), University of Lyon 2
 - Deputy director of [the Institute of Communication](https://icom.univ-lyon2.fr)
 - Member (elected) of the Administrative Board of the Institute of Communication, University of Lyon 2
 - Member of the executive committee of [IXXI](http://www.ixxi.fr), co-organizer of the seminar cycle [AI & language](http://www.ixxi.fr/seminaires/cycles-de-seminaires/intelligence-artificielle-et-langage?set_language=en&cl=en)
-- Member of conference PCs: IJCAI (SPC), NeurIPS, AAAI, ICLR, ARR (ACL, EMNLP...), ECAI, ECIR, LREC, EGC, CORIA/CIRCLE
+- Member of conference PCs: IJCAI, NeurIPS, AAAI, ICLR, ARR (ACL, EMNLP...), ECAI, ECIR, LREC, EGC, CORIA/CIRCLE
