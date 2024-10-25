@@ -27,9 +27,9 @@ Professor of Computer Science at the [University Lyon 2](https://www.univ-lyon2.
 
 # Recent talks
 
-- Peut-on représenter des auteurs dans un espace latent ? Recherches de similarité dans la production textuelle à l’aide de l'Intelligence Artificielle, Oct 24th 2024, talk for the closing conference of the LIFRANUM ANR projet: [slides](https://velcin.github.io/talks/pres-LIFRANUM.pdf)
+- Peut-on représenter des auteurs dans un espace latent ? Recherches de similarité dans la production textuelle à l’aide de l'Intelligence Artificielle, Oct 24th 2024, talk for the closing conference of the [LIFRANUM ANR projet](https://projet-lifranum.univ-lyon3.fr/projet): [slides](https://velcin.github.io/talks/pres-LIFRANUM.pdf)
 
-- Retour d'expérience sur des collaborations pluridisciplinaires entre Informatique et SHS, May 3rd 2024, invited talk for the Digital Humanities & AI days, jointly organized by AFIA and, GDR MADICS and MAGIS: [slides](https://velcin.github.io/talks/pres-AFIA.pdf)
+- Retour d'expérience sur des collaborations pluridisciplinaires entre Informatique et SHS, May 3rd 2024, invited talk for the Digital Humanities & AI days, jointly organized by [AFIA and, GDR MADICS and MAGIS](https://afia.asso.fr/les-journees-communes/humanite-numerique-et-ia/): [slides](https://velcin.github.io/talks/pres-AFIA.pdf)
 
 - DIKé project: some attempts to improve fairness in (compressed) language models, March 6th 2024, invited talk at the Workshop organized by the [ARENAS European project](https://arenasproject.eu): [slides](https://velcin.github.io/talks/talk-arenas.pdf)
 
