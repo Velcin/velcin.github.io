@@ -50,7 +50,7 @@ Julien Velcin, Université Lyon 2 - Master Humanités Numériques
 
 - classification de critiques de film à l'aide d'un modèle déjà affiné : [lien google collab](https://colab.research.google.com/drive/17wdal6LOhU47fVQGwqUWQxJMliQK72Nk?usp=sharing)
 
-[comment]: - prédiction de mots masqués avec CamemBERTa : [lien google collab](https://colab.research.google.com/drive/1_79HH-HL94ctMgjv56qngdBoyw0q3_1P?usp=sharing)
+- prédiction de mots masqués avec CamemBERTa : [lien google collab](https://colab.research.google.com/drive/1Ch9VkYoC73wKqbMj9VBZr-ob9rJ-3Gs3?usp=share_link)
 
 - système de Questions-Réponses : [lien google collab](https://colab.research.google.com/drive/18mogNkH6ou2eAxquN43hJKxgjRx2KbpN?usp=sharing)
 
