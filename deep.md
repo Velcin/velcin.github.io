@@ -1,4 +1,4 @@
-# Ressources pour le cours UdL 2023-2024
+# Ressources pour le cours UdL 2024-2025	
 
 Ces ressources sont mises à disposition pour les étudiants inscrits à la formation doctorale proposée par l'UdL "A2-8 Deep Learning : une introduction".
 
@@ -35,18 +35,10 @@ Ces ressources sont mises à disposition pour les étudiants inscrits à la form
 
 - génération simple de texte avec GPT2 : [lien google collab](https://colab.research.google.com/drive/1YAvRykmuNREzfiHTqc-O9qpEGumpbCUI?usp=sharing)
 
-- modèles génératifs plus avancés basés sur la librairie [OnPrem](https://pypi.org/project/onprem/) : [lien google collab](https://colab.research.google.com/drive/1LVeacsQ9dmE1BVzwR3eTLukpeRIMmUqi?usp=sharing)
+- utilisation de Mistral pour générer du texte, y compris pour répondre à des questions sur un corpus de son choix (principe RAG) : [export html](https://velcin.github.io/files/HN/Mistral.html), [notebook ipynb](https://velcin.github.io/files/HN/Mistral.ipynb)
 
+- mise au point du solution entièrement locale pour utiliser des LLMs : [export html](https://velcin.github.io/files/HN/Ollama.html), [notebook ipynb](https://velcin.github.io/files/HN/Ollama.ipynb)
 
-## Carnets de note en TensorFlow (déprécié)
-
-- [Perceptron sans couches cachées](https://velcin.github.io/files/deep/notebooks/intro-RL.ipynb)
-- [MLP sur les Iris](https://velcin.github.io/files/deep/notebooks/MLP_Iris.ipynb)
-- [Classification de textes](https://velcin.github.io/files/deep/notebooks/MLP_texte.ipynb)
-- [Classification d'images avec CNN](https://velcin.github.io/files/deep/notebooks/CNN_images.ipynb)
-- [Classification d'images avec modèle pré-entraîné](https://velcin.github.io/files/deep/notebooks/CNN_images-2.ipynb)
-- [Fouille d'opinion avec BERT](https://colab.research.google.com/github/TheophileBlard/french-sentiment-analysis-with-bert/blob/master/colab/french_sentiment_analysis_with_bert.ipynb)
-- [Quelques essais avec des auto-encodeurs](https://velcin.github.io/files/deep/notebooks/autoencoder-draft.ipynb)
 
 ## Eléments supplémentaires
 
