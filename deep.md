@@ -19,6 +19,12 @@ Ces ressources sont mises à disposition pour les étudiants inscrits à la form
 
 - classification supervisée avec modèles classiques : [export html](https://velcin.github.io/files/HN/TD2_M2_HN.html), [notebook ipynb](https://velcin.github.io/files/HN/TD2_M2_HN.ipynb)
 
+- classification supervisée avec un MLP (version simple) : [export html](https://velcin.github.io/files/deep/MLP_pytorch_simple.html), [notebook ipynb](https://velcin.github.io/files/deep/MLP_pytorch_simple.ipynb)
+
+- classification supervisée avec un MLP (version plus avancée) : [export html](https://velcin.github.io/files/deep/MLP_pytorch_full.html), [notebook ipynb](https://velcin.github.io/files/deep/MLP_pytorch_full.ipynb)
+
+- classification supervisée avec un CNN : [export html](https://velcin.github.io/files/deep/CNN.html), [notebook ipynb](https://velcin.github.io/files/deep/CNN.ipynb)
+
 - jeu de données de messages toxiques (extrait): [toxic_10k.csv](https://velcin.github.io/files/HN/data/toxic_10k.csv)
 
 - courte démo pour utiliser des plongements (embedding) avec la librairie Spacy : [export html](https://velcin.github.io/files/HN/TD3_M2_HN.html), [notebook ipynb](https://velcin.github.io/files/HN/TD3_M2_HN.ipynb)
