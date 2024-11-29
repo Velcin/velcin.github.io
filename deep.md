@@ -19,15 +19,17 @@ Ces ressources sont mises à disposition pour les étudiants inscrits à la form
 
 - classification supervisée avec modèles classiques : [export html](https://velcin.github.io/files/HN/TD2_M2_HN.html), [notebook ipynb](https://velcin.github.io/files/HN/TD2_M2_HN.ipynb)
 
-- classification supervisée avec un MLP (version simple) : [export html](https://velcin.github.io/files/deep/notebooks/MLP_pytorch_simple.html), [notebook ipynb](https://velcin.github.io/files/deep/notebooks/MLP_pytorch_simple.ipynb)
+- classification supervisée avec un MLP (version simple) : [export html](https://velcin.github.io/files/deep/notebooks/MLP_pytorch_simple.html), [notebook ipynb](https://velcin.github.io/files/deep/notebooks/MLP_pytorch_simple.ipynb), [custom_functions.py](https://velcin.github.io/files/deep/notebooks/custom_functions.py)
 
 - classification supervisée avec un MLP (version plus avancée) : [export html](https://velcin.github.io/files/deep/notebooks/MLP_pytorch_full.html), [notebook ipynb](https://velcin.github.io/files/deep/notebooks/MLP_pytorch_full.ipynb)
 
 - classification supervisée avec un CNN : [export html](https://velcin.github.io/files/deep/notebooks/CNN.html), [notebook ipynb](https://velcin.github.io/files/deep/notebooks/CNN.ipynb)
 
-- jeu de données de messages toxiques (extrait): [toxic_10k.csv](https://velcin.github.io/files/HN/data/toxic_10k.csv)
+- les 3 derniers notebooks sur google colab: [MLP simple](https://drive.google.com/file/d/1TZ-jifLDNIdz7IEvXgGv-4-UNFMkTyN2/view?usp=sharing), [MLP complet](https://drive.google.com/file/d/16K0ZYEzjlbvBFPfQ86s-qkxKXIHp7u5j/view?usp=sharing), [CNN](https://drive.google.com/file/d/1QgOhHpImt6rMW9N1JjwJTHybiQkCqo-m/view?usp=sharing)
 
 - courte démo pour utiliser des plongements (embedding) avec la librairie Spacy : [export html](https://velcin.github.io/files/HN/TD3_M2_HN.html), [notebook ipynb](https://velcin.github.io/files/HN/TD3_M2_HN.ipynb)
+
+- jeu de données de messages toxiques (extrait): [toxic_10k.csv](https://velcin.github.io/files/HN/data/toxic_10k.csv)
 
 - classification de critiques de film à l'aide d'un modèle déjà affiné : [lien google collab](https://colab.research.google.com/drive/17wdal6LOhU47fVQGwqUWQxJMliQK72Nk?usp=sharing)
 
