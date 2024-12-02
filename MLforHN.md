@@ -32,9 +32,7 @@ Julien Velcin, Université Lyon 2 - Master Humanités Numériques
 
 - jeu de données de messages toxiques (extrait): [toxic_10k.csv](https://velcin.github.io/files/HN/data/toxic_10k.csv)
 
-- rendu n°2 : (à venir)
-
-[comment]: classification de critiques de film : [consignes](https://velcin.github.io/files/HN/rendu2-classification.html), [allocine_3k.csv](https://velcin.github.io/files/HN/data/allocine_3k.csv)
+- rendu n°2 :classification de critiques de film : [consignes](https://velcin.github.io/files/HN/rendu2-classification.html), [allocine_3k.csv](https://velcin.github.io/files/HN/data/allocine_3k.csv)
 
 ### Partie 3 : vers les grands modèles de langue
 
