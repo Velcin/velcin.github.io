@@ -46,17 +46,17 @@ Julien Velcin, Université Lyon 2 - Master Humanités Numériques
 
 - classification de critiques de film à l'aide d'un modèle déjà affiné : [lien google collab](https://colab.research.google.com/drive/17wdal6LOhU47fVQGwqUWQxJMliQK72Nk?usp=sharing)
 
-- prédiction de mots masqués avec CamemBERTa : [lien google collab](https://colab.research.google.com/drive/1Ch9VkYoC73wKqbMj9VBZr-ob9rJ-3Gs3?usp=share_link)
+- prédiction de mots masqués avec CamemBERTa : [lien google colab](https://colab.research.google.com/drive/1Ch9VkYoC73wKqbMj9VBZr-ob9rJ-3Gs3?usp=share_link)
 
-- système de Questions-Réponses : [lien google collab](https://colab.research.google.com/drive/18mogNkH6ou2eAxquN43hJKxgjRx2KbpN?usp=sharing)
+- système de Questions-Réponses : [lien google colab](https://colab.research.google.com/drive/18mogNkH6ou2eAxquN43hJKxgjRx2KbpN?usp=sharing)
 
 - affinage de la famille BERT pour la classification : [lien google collab](https://colab.research.google.com/drive/1p1_Jv-KtyG4tpAyzhGlNYiNCOafakAEA?usp=sharing)
 
-- text classification on GLUE : [lien google collab](https://colab.research.google.com/github/huggingface/notebooks/blob/main/examples/text_classification-tf.ipynb#scrollTo=TlqNaB8jIrJW)
+- text classification on GLUE : [lien google colab](https://colab.research.google.com/github/huggingface/notebooks/blob/main/examples/text_classification-tf.ipynb#scrollTo=TlqNaB8jIrJW)
 
-- génération simple de texte avec GPT2 : [lien google collab](https://colab.research.google.com/drive/1YAvRykmuNREzfiHTqc-O9qpEGumpbCUI?usp=sharing)
+- génération simple de texte avec GPT2 : [lien google colab](https://colab.research.google.com/drive/1YAvRykmuNREzfiHTqc-O9qpEGumpbCUI?usp=sharing)
 
-- utilisation de Mistral pour générer du texte, y compris pour répondre à des questions sur un corpus de son choix (principe RAG) : [export html](https://velcin.github.io/files/HN/Mistral.html), [notebook ipynb](https://velcin.github.io/files/HN/Mistral.ipynb)
+- utilisation de Mistral pour générer du texte, y compris pour répondre à des questions sur un corpus de son choix (principe RAG) : [export html](https://velcin.github.io/files/HN/Mistral.html), [notebook ipynb](https://velcin.github.io/files/HN/Mistral.ipynb), [lien google colab](https://drive.google.com/file/d/1erX7SGXAVUdkATo3YyCtez8ZRr-cHoBh/view?usp=sharing)
 
 - mise au point du solution entièrement locale pour utiliser des LLMs : [export html](https://velcin.github.io/files/HN/Ollama.html), [notebook ipynb](https://velcin.github.io/files/HN/Ollama.ipynb)
 
