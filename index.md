@@ -42,5 +42,6 @@ I teach foundational courses in computer science, such as programming, as well a
 - Coordinator of the [Master of Computer Science](https://icom.univ-lyon2.fr/formation/filiere-informatique-statistique), University of Lyon 2 (head of the 1st year)
 - Deputy director of [the Institute of Communication](https://icom.univ-lyon2.fr)
 - Member (elected) of the Administrative Board of the Institute of Communication, University of Lyon 2
+- Member (elected) of the Research Council of the University of Lyon 2
 - Member of the executive committee of [IXXI](http://www.ixxi.fr), co-organizer of the seminar cycle [AI & language](http://www.ixxi.fr/seminaires/cycles-de-seminaires/intelligence-artificielle-et-langage?set_language=en&cl=en)
 - Member of conference PCs: IJCAI, NeurIPS, AAAI, ICLR, ARR (ACL, EMNLP...), ECAI, ECIR, LREC, EGC, CORIA/CIRCLE
