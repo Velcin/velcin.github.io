@@ -46,11 +46,15 @@ Cela permet ensuite de résoudre des problèmes de classification (des noeuds, d
 - graphes 2 : [slides](https://velcin.github.io/files/NA/4.2_graph2.html)
 - graphes 3 : [slides](https://velcin.github.io/files/NA/4.3_graph3.html)
 
+## TP
+
+- TP RI partie 1 : [slides](https://velcin.github.io/files/NA/TP1.pdf)
+- TP RI partie 2 : [slides](https://velcin.github.io/files/NA/TP2.pdf)
+- TP RI partie 3 : [slides](https://velcin.github.io/files/NA/TP3.pdf)
+
 ## Projet
 
-- [consignes générales](https://velcin.github.io/files/NA/consignes_2023.pdf)
-- [cas d'étude MALIA](https://velcin.github.io/files/NA/cas_etude_MALIA.pdf) [données](https://filesender.renater.fr/?s=download&token=e90dbac7-d0b7-4c22-9dc5-5730e4046438)
-- [cas d'étude MIASHS](https://velcin.github.io/files/NA/cas_etude_MIASHS.pdf) [données](https://velcin.github.io/files/NA/data_MIASHS.zip)
+- [consignes générales](https://velcin.github.io/files/NA/consignes.pdf)
 
 ## Liens
 
