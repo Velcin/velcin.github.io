@@ -21,18 +21,7 @@ Cela permet ensuite de résoudre des problèmes de classification (des noeuds, d
 - analyse de graphes : [slides](https://velcin.github.io/files/NA/part3_graphs.pdf)
 - apprentissage de thématiques : [slides](https://velcin.github.io/files/NA/part4_topic-learning.pdf)
 
-## Ressources supplémentaires
-
-- Généralités sur les matrices (HEC Montreal) : [extrait](https://velcin.github.io/files/NA/Generalites_sur_matrices.pdf)
-- Graph Representation Learning (W.L. Hamilton): [book](https://velcin.github.io/files/NA/GRL_Book.pdf)
-- Cours de J. Ah-Pine : [extrait](https://velcin.github.io/files/NA/extrait_CM_AHPINE.pdf)
-- Présentation A. Guille à l'atelier TextMine : [slides](https://velcin.github.io/files/NA/GUILLE_textmine2023.pdf)
-- Présentation d'A. Gourru de GraphSAGE au groupe de lecture ARIA : [slides](https://velcin.github.io/files/NA/GOURRU_GraphSAGE.pdf)
-- Présentation de J. Velcin de GAT au groupe de lecture ARIA : [notes](https://velcin.github.io/files/NA/notes_VELCIN_GAT.pdf)
-- Présentation de J. Velcin d'InfoGraph au groupe de lecture ARIA : [notes](https://velcin.github.io/files/NA/notes_VELCIN_InfoGraph.pdf)
-- Everything is connected (P. Veličković) : [article](https://velcin.github.io/files/NA/velickovic_2023.pdf)
-
-## Notebooks
+## Notebooks supports
 
 - prétraitement du texte 1 : [slides](https://velcin.github.io/files/NA/1.1_text1.html)
 - prétraitement du texte 2 : [slides](https://velcin.github.io/files/NA/1.2_text2.html)
@@ -55,6 +44,18 @@ Cela permet ensuite de résoudre des problèmes de classification (des noeuds, d
 ## Projet
 
 - [consignes générales](https://velcin.github.io/files/NA/consignes.pdf)
+
+## Ressources supplémentaires
+
+- Généralités sur les matrices (HEC Montreal) : [extrait](https://velcin.github.io/files/NA/Generalites_sur_matrices.pdf)
+- Graph Representation Learning (W.L. Hamilton): [book](https://velcin.github.io/files/NA/GRL_Book.pdf)
+- Cours de J. Ah-Pine : [extrait](https://velcin.github.io/files/NA/extrait_CM_AHPINE.pdf)
+- Présentation A. Guille à l'atelier TextMine : [slides](https://velcin.github.io/files/NA/GUILLE_textmine2023.pdf)
+- Présentation d'A. Gourru de GraphSAGE au groupe de lecture ARIA : [slides](https://velcin.github.io/files/NA/GOURRU_GraphSAGE.pdf)
+- Présentation de J. Velcin de GAT au groupe de lecture ARIA : [notes](https://velcin.github.io/files/NA/notes_VELCIN_GAT.pdf)
+- Présentation de J. Velcin d'InfoGraph au groupe de lecture ARIA : [notes](https://velcin.github.io/files/NA/notes_VELCIN_InfoGraph.pdf)
+- Everything is connected (P. Veličković) : [article](https://velcin.github.io/files/NA/velickovic_2023.pdf)
+
 
 ## Liens
 
