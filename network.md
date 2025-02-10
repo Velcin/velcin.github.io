@@ -18,8 +18,8 @@ Cela permet ensuite de résoudre des problèmes de classification (des noeuds, d
 
 - introduction générale au cours : [slides](https://velcin.github.io/files/NA/part1_introduction.pdf)
 - représentation vectorielle des documents : [slides](https://velcin.github.io/files/NA/part2_repr_documents.pdf)
-- analyse de graphes : [slides](https://velcin.github.io/files/NA/part3_graphs.pdf)
-- apprentissage de thématiques : [slides](https://velcin.github.io/files/NA/part4_topic-learning.pdf)
+- apprentissage de thématiques : [slides](https://velcin.github.io/files/NA/part3_topic-learning.pdf)
+- analyse de graphes : [slides](https://velcin.github.io/files/NA/part4_graphs.pdf)
 
 ## Notebooks supports
 
