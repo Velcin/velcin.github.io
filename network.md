@@ -43,7 +43,9 @@ Cela permet ensuite de résoudre des problèmes de classification (des noeuds, d
 
 ## Projet
 
-- [consignes générales](https://velcin.github.io/files/NA/consignes.pdf)
+- [consignes générales](https://velcin.github.io/files/NA/consignes2015.pdf)
+- [données](https://velcin.github.io/files/NA/data_project.csv)
+
 
 ## Ressources supplémentaires
 
