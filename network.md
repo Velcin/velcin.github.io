@@ -45,6 +45,7 @@ Cela permet ensuite de résoudre des problèmes de classification (des noeuds, d
 
 - [consignes générales](https://velcin.github.io/files/NA/consignes2015.pdf)
 - [données](https://velcin.github.io/files/NA/data_project.csv)
+- dates limite d'envoi : 14/03 (non alternants) et 31/03 (alternants)
 
 
 ## Ressources supplémentaires
