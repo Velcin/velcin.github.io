@@ -20,6 +20,7 @@ Cela permet ensuite de résoudre des problèmes de classification (des noeuds, d
 - représentation vectorielle des documents : [slides](https://velcin.github.io/files/NA/part2_repr_documents.pdf)
 - apprentissage de thématiques : [slides](https://velcin.github.io/files/NA/part3_topic-learning.pdf)
 - analyse de graphes : [slides](https://velcin.github.io/files/NA/part4_graphs.pdf)
+- TD : [sujet](https://velcin.github.io/files/NA/TD.pdf)
 
 ## Notebooks supports
 
