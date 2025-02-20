@@ -35,6 +35,7 @@ Cela permet ensuite de résoudre des problèmes de classification (des noeuds, d
 - graphes 1 : [slides](https://velcin.github.io/files/NA/4.1_graph1.html)
 - graphes 2 : [slides](https://velcin.github.io/files/NA/4.2_graph2.html)
 - graphes 3 : [slides](https://velcin.github.io/files/NA/4.3_graph3.html)
+- liste de mots outils : [mots outils français](https://velcin.github.io/files/HN/stop/Stop-words-french.txt), [mots outils anglais](https://velcin.github.io/files/HN/stop/Stop-words-en.txt)
 
 ## TP
 
