@@ -42,6 +42,7 @@ Cela permet ensuite de résoudre des problèmes de classification (des noeuds, d
 - TP RI partie 1 : [slides](https://velcin.github.io/files/NA/TP1.pdf)
 - TP RI partie 2 : [slides](https://velcin.github.io/files/NA/TP2.pdf)
 - TP RI partie 3 : [slides](https://velcin.github.io/files/NA/TP3.pdf)
+- TP RI partie 4 : [slides](https://velcin.github.io/files/NA/TP4.pdf)
 
 ## Projet
 
