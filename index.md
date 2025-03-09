@@ -10,7 +10,7 @@ Professor of Computer Science at the [University Lyon 2](https://www.univ-lyon2.
 
 - artificial intelligence
 - machine learning
-- data mining
+- data science
 - natural language processing
 - social media analysis
 - digital humanities
@@ -27,6 +27,10 @@ Professor of Computer Science at the [University Lyon 2](https://www.univ-lyon2.
 
 # Recent talks
 
+- Auditing and mitigating biases in (compressed) LMs, Feb 12th 2025, invited talk for at the Workshop Foundations and Advances in Generative AI: Theory and Methods, organized by MBZUAI France Lab: [slides](https://velcin.github.io/talks/talk_VELCIN_MBZUAI.pdf)
+
+MBZUAI France Lab 
+
 - Peut-on représenter des auteurs dans un espace latent ? Recherches de similarité dans la production textuelle à l’aide de l'Intelligence Artificielle, Oct 24th 2024, talk for the closing conference of the [LIFRANUM ANR projet](https://projet-lifranum.univ-lyon3.fr/projet): [slides](https://velcin.github.io/talks/pres-LIFRANUM.pdf)
 
 - Retour d'expérience sur des collaborations pluridisciplinaires entre Informatique et SHS, May 3rd 2024, invited talk for the Digital Humanities & AI days, jointly organized by [AFIA and, GDR MADICS and MAGIS](https://afia.asso.fr/les-journees-communes/humanite-numerique-et-ia/): [slides](https://velcin.github.io/talks/pres-AFIA.pdf)
@@ -35,7 +39,7 @@ Professor of Computer Science at the [University Lyon 2](https://www.univ-lyon2.
 
 # Teaching
 
-I teach foundational courses in computer science, such as programming, as well as advanced courses in data science, including artificial intelligence, machine learning, social media analysis, and natural language processing. All of my lectures are supplemented by practical projects that use various programming languages (eg., Python, R, C++). My primary audience consists of computer science students (BSc in Computer Science and MSc in Artificial Intelligence), but I also engage with interdisciplinary programs, such as the MSc in Digital Humanities and MSc related to computational social sciences.
+I teach foundational courses in computer science, such as programming, as well as advanced courses in artificial intelligence, including data science, machine learning, social media analysis, and natural language processing. All of my lectures are supplemented by practical projects that use various programming languages (eg., Python, R, C++). My primary audience consists of computer science students (BSc in Computer Science and MSc in Artificial Intelligence), but I also engage with interdisciplinary programs, such as the MSc in Digital Humanities and MSc related to computational social sciences.
 
 # Service
 
