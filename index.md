@@ -38,7 +38,9 @@ Professor of Computer Science at [Ecole Centrale Lyon](https://www.ec-lyon.fr), 
 
 # Teaching
 
-I teach foundational courses in computer science, such as programming, as well as advanced courses in artificial intelligence, including data science, machine learning, social media analysis, and natural language processing. All of my lectures are supplemented by practical projects that use various programming languages (eg., Python, R, C++). My primary audience consists of computer science students (BSc in Computer Science and MSc in Artificial Intelligence), but I also engage with interdisciplinary programs, such as the MSc in Digital Humanities and MSc related to computational social sciences.
+(to be updated)
+
+<!-- I teach foundational courses in computer science, such as programming, as well as advanced courses in artificial intelligence, including data science, machine learning, social media analysis, and natural language processing. All of my lectures are supplemented by practical projects that use various programming languages (eg., Python, R, C++). My primary audience consists of computer science students (BSc in Computer Science and MSc in Artificial Intelligence), but I also engage with interdisciplinary programs, such as the MSc in Digital Humanities and MSc related to computational social sciences.-->
 
 # Service
 
