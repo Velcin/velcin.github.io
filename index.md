@@ -1,10 +1,12 @@
 # Julien Velcin
 
-Professor of Computer Science at the [University Lyon 2](https://www.univ-lyon2.fr), member of the Data Mining & Decision team of the [ERIC Lab](https://eric.msh-lse.fr/en/) and teacher at the [Institute of Communication (ICOM)](https://icom.univ-lyon2.fr).
+I've just moved to Ecole Centrale de Lyon / LIRIS.
 
-**contact:** julien.velcin@univ-lyon2.fr   
+Professor of Computer Science at [Ecole Centrale Lyon](https://www.ec-lyon.fr), member of the Imagine team of [LIRIS](https://liris.cnrs.fr).
+
+**contact:** julien.velcin@ec-lyon.fr   
 <!-- **phone:** (0) 478 772 414 - fax: (0) 478 772 375   -->
-**office:** ERIC Lab, bureau K198 - 5 av. Pierre Mendès-France - 69676 Bron Cedex, France   
+**office:** (soon) <!--ERIC Lab, bureau K198 - 5 av. Pierre Mendès-France - 69676 Bron Cedex, France   -->
 
 # Research topics
 
@@ -23,7 +25,6 @@ Professor of Computer Science at the [University Lyon 2](https://www.univ-lyon2.
 # Projects
 
 - **DIKé** (ANR, 2022-2026) : Bias, fairness and ethics of compressed NLP models ([website](http://www.anr-dike.fr/))
-- **LIFRANUM** (ANR, 2020-2023): identify and structure the corpus of digital French literatures ([website](https://projet-lifranum.univ-lyon3.fr/projet))
 
 # Recent talks
 
@@ -41,9 +42,6 @@ I teach foundational courses in computer science, such as programming, as well a
 
 # Service
 
-- Coordinator of the [Master of Computer Science](https://icom.univ-lyon2.fr/formation/filiere-informatique-statistique), University of Lyon 2 (head of the 1st year)
-- Deputy director of [the Institute of Communication](https://icom.univ-lyon2.fr)
-- Member (elected) of the Administrative Board of the Institute of Communication, University of Lyon 2
-- Member (elected) of the Research Council of the University of Lyon 2
-- Member of the executive committee of [IXXI](http://www.ixxi.fr), co-organizer of the seminar cycle [AI & language](http://www.ixxi.fr/seminaires/cycles-de-seminaires/intelligence-artificielle-et-langage?set_language=en&cl=en)
+(to be updated)
+
 - Member of conference PCs: IJCAI, NeurIPS, AAAI, ICLR, ARR (ACL, EMNLP...), ECAI, ECIR, LREC, EGC, CORIA/CIRCLE
