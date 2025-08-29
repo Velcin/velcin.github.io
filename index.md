@@ -1,6 +1,6 @@
 # Julien Velcin
 
-I've just moved to Ecole Centrale de Lyon / LIRIS.
+<i>I've just moved to Ecole Centrale de Lyon / LIRIS.</i>
 
 Professor of Computer Science at [Ecole Centrale Lyon](https://www.ec-lyon.fr), member of the Imagine team of [LIRIS](https://liris.cnrs.fr).
 
