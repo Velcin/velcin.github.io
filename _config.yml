@@ -1,7 +1,7 @@
 title                    : "Julien Velcin"
 title_separator          : "-"
 name                     : &name "Julien Velcin"
-description              : &description "Professor of Computer Science at the University Lyon 2"
+description              : &description "Professor of Computer Science at Ecole Centrale Lyon"
 profile_picture          : http://scidolyse.ens-lyon.fr/sites/default/files/styles/medium/public/2019-02/julienvelcin.jpg 
 
 #theme: jekyll-theme-minimal
