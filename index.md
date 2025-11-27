@@ -3,7 +3,7 @@
 Professor of Computer Science at [Ecole Centrale Lyon](https://www.ec-lyon.fr), member of the Imagine team of [LIRIS](https://liris.cnrs.fr).
 
 **contact:** julien.velcin@ec-lyon.fr   
-**office:** Dpt Mathématiques-Informatique - Bat. D4 bureau D4007b - 36 Av. Guy de Collongue, 69130 Écully
+**office:** Dpt Mathématiques-Informatique - Bat. D4 - 36 Av. Guy de Collongue, 69130 Écully
 
 # Research topics
 
