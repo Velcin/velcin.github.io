@@ -25,6 +25,7 @@ Pr Julien Velcin, Ecole Centrale de Lyon
 - Tasks: Data cleaning (dealing with data types, missing values, outliers), using multiple source tables
 
 - Exercices: [instructions](https://velcin.github.io/files/BSC/lab2.pdf) [data](https://velcin.github.io/files/BSC/acc-data.zip)
+- Exercices: [instructions](https://velcin.github.io/files/BSC/lab2.pdf) - [data](https://velcin.github.io/files/BSC/acc-data.zip)
 
 **Lab Session 3:** Numpy and matrix operations
 
