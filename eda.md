@@ -6,7 +6,7 @@ Pr Julien Velcin, Ecole Centrale de Lyon
 
 ## Material
 
-- Lecture: [slides](https://velcin.github.io/files/BSC/eda_slides.pdf)
+Lecture: [slides](https://velcin.github.io/files/BSC/eda_slides.pdf)
 
 ## Lab sessions
 
@@ -16,7 +16,7 @@ Pr Julien Velcin, Ecole Centrale de Lyon
 - Format: Highly guided Jupyter notebooks with step-by-step instructions
 - Tasks: Loading a CSV file, filtering rows, preprocessing (eg., missing values), basic descriptive statistics (mean, median, count), and creating the first simple visualizations (bar charts, histograms) to find initial clues
 
-Exercices: [gitlab](https://gitlab.ec-lyon.fr/jvelcin/bsc-eda.git)
+- Exercices: [gitlab](https://gitlab.ec-lyon.fr/jvelcin/bsc-eda.git)
 
 **Lab Session 2:** Advanced Pandas and relational data
 
