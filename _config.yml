@@ -7,3 +7,4 @@ profile_picture          : http://scidolyse.ens-lyon.fr/sites/default/files/styl
 #theme: jekyll-theme-minimal
 #theme: jekyll-theme-cayman
 theme: jekyll-theme-leap-day
+markdown: CommonMarkGhPages
