@@ -43,3 +43,13 @@ Lecture: [slides](https://velcin.github.io/files/BSC/eda_slides.pdf)
 - Objective: Act as a lead data analyst by running a full pipeline and presenting actionable insights
 - Format: Autonomous project based on a short problem statement
 - Tasks: Fetch data via an API, clean it, explore it, and select the most impactful visualizations. The final deliverable requires applying data storytelling principles: a clean, commented notebook and a few slides where visual cues are used sparingly to highlight the key findings
+
+<details>
+  <summary>Click me</summary>
+
+  * item 1
+  * item 2
+
+  ![alt text for screen readers](https://velcin.github.io/cours-llm/img/llm/reminder-ml.png" Text to show on mouseover")
+
+</details>
