@@ -10,7 +10,7 @@ Lecture: [slides](https://velcin.github.io/files/BSC/eda_slides.pdf)
 
 ## Lab sessions
 
-**Lab Session 1:** Intro to pandas and basic EDA
+**Lab Session 1 & 2:** Intro to pandas and basic EDA
 
 - Objective: Get comfortable with the core toolkit and perform basic operations on a single dataset
 - Format: Highly guided Jupyter notebooks with step-by-step instructions
@@ -18,7 +18,7 @@ Lecture: [slides](https://velcin.github.io/files/BSC/eda_slides.pdf)
 
 - Exercices: [gitlab](https://gitlab.ec-lyon.fr/jvelcin/bsc-eda.git)
 
-**Lab Session 2:** Advanced Pandas and relational data
+**Lab Session 3:** Advanced Pandas and relational data
 
 - Objective: Move from highly guided instructions to more autonomy, perform more advanced operations
 - Format: Semi-guided problem-solving with instructions given in a separate document
