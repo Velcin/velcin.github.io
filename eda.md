@@ -10,11 +10,19 @@ Lecture: [slides](https://velcin.github.io/files/BSC/eda_slides.pdf)
 
 ## Lab sessions
 
-**Lab Session 1 & 2:** Intro to pandas and basic EDA
+**Lab Session 1:** Intro to pandas and basic EDA
 
 - Objective: Get comfortable with the core toolkit and perform basic operations on a single dataset
 - Format: Highly guided Jupyter notebooks with step-by-step instructions
 - Tasks: Loading a CSV file, filtering rows, preprocessing (eg., missing values), basic descriptive statistics (mean, median, count), and creating the first simple visualizations (bar charts, histograms) to find initial clues
+
+- Exercices: [gitlab](https://gitlab.ec-lyon.fr/jvelcin/bsc-eda.git)
+
+**Lab Session 2:** Numpy and matrix operations
+
+- Objective: Look under the hood of data structures and apply Linear Algebra concepts to numerical data
+- Format: Mathematical programming exercises
+- Tasks: Introduction to Numpy arrays, broadcasting, and matrix manipulation
 
 - Exercices: [gitlab](https://gitlab.ec-lyon.fr/jvelcin/bsc-eda.git)
 
@@ -25,12 +33,6 @@ Lecture: [slides](https://velcin.github.io/files/BSC/eda_slides.pdf)
 - Tasks: Data cleaning (dealing with data types, missing values, outliers), using multiple source tables
 
 - Exercices: [instructions](https://velcin.github.io/files/BSC/lab2.pdf) - [data](https://velcin.github.io/files/BSC/acc-data.zip)
-
-**Lab Session 3:** Numpy and matrix operations
-
-- Objective: Look under the hood of data structures and apply Linear Algebra concepts to numerical data
-- Format: Mathematical programming exercises
-- Tasks: Introduction to Numpy arrays, broadcasting, and matrix manipulation
 
 **Lab Session 4:** Using APIs and dealing with textual data
 
@@ -44,12 +46,3 @@ Lecture: [slides](https://velcin.github.io/files/BSC/eda_slides.pdf)
 - Format: Autonomous project based on a short problem statement
 - Tasks: Fetch data via an API, clean it, explore it, and select the most impactful visualizations. The final deliverable requires applying data storytelling principles: a clean, commented notebook and a few slides where visual cues are used sparingly to highlight the key findings
 
-<details>
-  <summary>Click me</summary>
-
-  * item 1
-  * item 2
-
-  ![alt text for screen readers](https://velcin.github.io/cours-llm/img/llm/reminder-ml.png" Text to show on mouseover")
-
-</details>
