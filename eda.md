@@ -46,4 +46,4 @@ Lecture: [slides](https://velcin.github.io/files/BSC/eda_slides.pdf)
 - Format: Autonomous project based on a short problem statement
 - Tasks: Fetch data via an API, clean it, explore it, and select the most impactful visualizations. The final deliverable requires applying data storytelling principles: a clean, commented notebook and a few slides where visual cues are used sparingly to highlight the key findings
 
-![title](https://velcin.github.io/files/python/python-cheatsheet1)
+![title](https://velcin.github.io/files/python/python-cheatsheet1.png)
