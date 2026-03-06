@@ -32,7 +32,7 @@ Lecture: [slides](https://velcin.github.io/files/BSC/eda_slides.pdf)
 - Format: Semi-guided problem-solving with instructions given in a separate document
 - Tasks: Data cleaning (dealing with data types, missing values, outliers), using multiple source tables
 
-- Exercices: [instructions](https://velcin.github.io/files/BSC/lab2.pdf) - [data](https://velcin.github.io/files/BSC/acc-data.zip)
+- Exercices: [instructions](https://velcin.github.io/files/BSC/lab3.pdf) - [data](https://velcin.github.io/files/BSC/acc-data.zip)
 
 **Lab Session 4:** Using APIs and dealing with textual data
 
