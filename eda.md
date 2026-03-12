@@ -16,7 +16,7 @@ Lecture: [slides](https://velcin.github.io/files/BSC/eda_slides.pdf)
 - Format: Highly guided Jupyter notebooks with step-by-step instructions
 - Tasks: Loading a CSV file, filtering rows, preprocessing (eg., missing values), basic descriptive statistics (mean, median, count), and creating the first simple visualizations (bar charts, histograms) to find initial clues
 
-- Exercices: [gitlab](https://gitlab.ec-lyon.fr/jvelcin/bsc-eda.git)
+- Slides + exercices: [gitlab](https://gitlab.ec-lyon.fr/jvelcin/bsc-eda.git)
 
 **Lab Session 2:** Numpy and matrix operations
 
@@ -24,7 +24,7 @@ Lecture: [slides](https://velcin.github.io/files/BSC/eda_slides.pdf)
 - Format: Mathematical programming exercises
 - Tasks: Introduction to Numpy arrays, broadcasting, and matrix manipulation
 
-- Exercices: [gitlab](https://gitlab.ec-lyon.fr/jvelcin/bsc-eda.git)
+- Slides + exercices: [gitlab](https://gitlab.ec-lyon.fr/jvelcin/bsc-eda.git)
 
 **Lab Session 3:** Advanced Pandas and relational data
 
@@ -39,6 +39,8 @@ Lecture: [slides](https://velcin.github.io/files/BSC/eda_slides.pdf)
 - Objective: Learn to handle unstructured data (text) and fetch real-time information from the web
 - Format: Exploratory notebook with a provided API wrapper
 - Tasks: basic text processing (tokenization, stop-words removal), calculate word frequencies, generate word clouds, querying a simple Web API, basics of topic modeling
+
+- Slides + exercices: [gitlab](https://gitlab.ec-lyon.fr/jvelcin/bsc-eda.git)
 
 **Lab Session 5:** End-to-End project and storytelling
 
