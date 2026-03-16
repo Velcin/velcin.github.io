@@ -8,6 +8,10 @@ Pr Julien Velcin, Ecole Centrale de Lyon
 
 Lecture: [slides](https://velcin.github.io/files/BSC/eda_slides.pdf)
 
+Python f-string [cheat sheet](https://fstring.help/cheat/)
+
+Numpy [cheat sheet](https://assets.datacamp.com/blog_assets/Numpy_Python_Cheat_Sheet.pdf)
+
 ## Lab sessions
 
 **Lab Session 1:** Intro to pandas and basic EDA
