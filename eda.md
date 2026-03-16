@@ -46,8 +46,13 @@ Numpy [cheat sheet](https://assets.datacamp.com/blog_assets/Numpy_Python_Cheat_S
 
 - Slides + exercices: [gitlab](https://gitlab.ec-lyon.fr/jvelcin/bsc-eda.git)
 
-**Lab Session 5:** End-to-End project and storytelling
+## Project
 
-- Objective: Act as a lead data analyst by running a full pipeline and presenting actionable insights
-- Format: Autonomous project based on a short problem statement
-- Tasks: Fetch data via an API, clean it, explore it, and select the most impactful visualizations. The final deliverable requires applying data storytelling principles: a clean, commented notebook and a few slides where visual cues are used sparingly to highlight the key findings
+Instructions: [projet-instructions.pdf](https://velcin.github.io/files/BSC/projet-instructions.pdf)
+
+Deadline: April the 7th (23:59) for submitting the report
+
+Oral presentation: April the 20th
+
+
+
