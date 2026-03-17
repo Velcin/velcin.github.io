@@ -50,6 +50,8 @@ Numpy [cheat sheet](https://assets.datacamp.com/blog_assets/Numpy_Python_Cheat_S
 
 Instructions: [projet-instructions.pdf](https://velcin.github.io/files/BSC/projet-instructions.pdf)
 
+Groups: [list of groups](https://cryptpad.fr/sheet/#/2/sheet/edit/KDOR3-r0hVTHqf3E5RMm0hgR/p/)
+
 Deadline: April the 7th (23:59) for submitting the report
 
 Oral presentation: April the 20th
