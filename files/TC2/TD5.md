@@ -1,7 +1,5 @@
 # TD #5 : Le jeu du Pendu
 
-__Ceci est la version enseignants incluant les corrections__
-
 Ce document est la "version enseignants" du TD #5 incluant les solutions aux questions. Il est à traiter pendant 4h de TD.
 
 Le travail à réaliser par les étudiants faisant suite à ce TD sera noté. Les consignes sont expliquées dans le fichier [consignes_TD5.md](./consignes_TD5.md), disponible au même endroit que cet énoncé. 
