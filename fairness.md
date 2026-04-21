@@ -10,4 +10,6 @@ Lecture: [slides](https://velcin.github.io/files/BSC/talk-fairness.pdf)
 
 Practice: [notebook](https://velcin.github.io/files/BSC/income-etu.ipynb)
 
+Practice (correciton): [notebook](https://velcin.github.io/files/BSC/income.ipynb)
+
 
