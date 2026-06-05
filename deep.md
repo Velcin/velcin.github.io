@@ -28,7 +28,7 @@ Ces ressources sont mises à disposition pour les étudiants inscrits à la form
 
 - les 3 derniers notebooks sur google colab: [MLP simple](https://drive.google.com/file/d/1TZ-jifLDNIdz7IEvXgGv-4-UNFMkTyN2/view?usp=sharing), [MLP complet](https://drive.google.com/file/d/16K0ZYEzjlbvBFPfQ86s-qkxKXIHp7u5j/view?usp=sharing), [CNN](https://drive.google.com/file/d/1QgOhHpImt6rMW9N1JjwJTHybiQkCqo-m/view?usp=sharing)
 
-- classification supervisée avec un modèle moderne et affinage : [lien google collab](https://colab.research.google.com/drive/1an-s-VE32B303SHqYnywejvpFtgbGiI5?usp=share_link)
+- classification supervisée avec un modèle moderne et affinage : [lien google collab](https://colab.research.google.com/drive/1an-s-VE32B303SHqYnywejvpFtgbGiI5?usp=share_link), [extrait jeu de données](https://velcin.github.io/files/deep/data/data_extrait_.zip)
 
 - courte démo pour utiliser des plongements (embedding) avec la librairie Spacy : [export html](https://velcin.github.io/files/HN/TD3_M2_HN.html), [notebook ipynb](https://velcin.github.io/files/HN/TD3_M2_HN.ipynb)
 
