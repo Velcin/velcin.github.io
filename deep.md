@@ -28,11 +28,13 @@ Ces ressources sont mises à disposition pour les étudiants inscrits à la form
 
 - les 3 derniers notebooks sur google colab: [MLP simple](https://drive.google.com/file/d/1TZ-jifLDNIdz7IEvXgGv-4-UNFMkTyN2/view?usp=sharing), [MLP complet](https://drive.google.com/file/d/16K0ZYEzjlbvBFPfQ86s-qkxKXIHp7u5j/view?usp=sharing), [CNN](https://drive.google.com/file/d/1QgOhHpImt6rMW9N1JjwJTHybiQkCqo-m/view?usp=sharing)
 
+- classification supervisée avec un modèle moderne et affinage : [lien google collab](https://colab.research.google.com/drive/1an-s-VE32B303SHqYnywejvpFtgbGiI5?usp=share_link)
+
 - courte démo pour utiliser des plongements (embedding) avec la librairie Spacy : [export html](https://velcin.github.io/files/HN/TD3_M2_HN.html), [notebook ipynb](https://velcin.github.io/files/HN/TD3_M2_HN.ipynb)
 
 - jeu de données de messages toxiques (extrait): [toxic_10k.csv](https://velcin.github.io/files/HN/data/toxic_10k.csv)
 
-- classification de critiques de film à l'aide d'un modèle déjà affiné : [lien google collab](https://colab.research.google.com/drive/17wdal6LOhU47fVQGwqUWQxJMliQK72Nk?usp=sharing)
+- classification de critiques de film à l'aide d'un modèle déjà affiné : [lien google collab]()
 
 - prédiction de mots masqués avec CamemBERTa : [lien google collab](https://colab.research.google.com/drive/1_79HH-HL94ctMgjv56qngdBoyw0q3_1P?usp=sharing)
 
