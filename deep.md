@@ -1,19 +1,20 @@
-# Ressources pour le cours UdL 2024-2025	
+# Ressources pour le cours UdL 2025-2026
 
-Ces ressources sont mises à disposition pour les étudiants inscrits à la formation doctorale proposée par l'UdL "A2-8 Deep Learning : une introduction".
+Intervenant : Julien Velcin (Ecole Centrale de Lyon, LIRIS)
+
+Ces ressources sont mises à disposition pour les étudiants inscrits à la formation doctorale proposée par l'UdL "TH2-3 Deep Learning : une introduction".
 
 ## Supports de cours
 
-- [Brève introduction à l'IA](https://velcin.github.io/files/deep/intro-IA.pdf)
-- [Apprentissage automatique (supervisé)](https://velcin.github.io/files/HN/machine-learning.pdf)
-- [Introduction au deep learning](https://velcin.github.io/files/deep/intro_deep.pdf)
-- [Bases techniques pour le perceptron](https://velcin.github.io/files/deep/ANN_VELCIN.pdf)
+- [Introduction générale au cours](https://velcin.github.io/files/deep/1-deep.pdf)
+- [Brève introduction à l'IA](https://velcin.github.io/files/deep/2-IA.pdf)
+- [Apprentissage automatique (supervisé)](https://velcin.github.io/files/deep/3-ML.pdf)
+- [Bases techniques pour le perceptron](https://velcin.github.io/files/deep/4-ann.pdf)
 - [Quelques notions d'optimisation](https://velcin.github.io/files/deep/optim-mini.pdf)
-- [Représentation pour les données textuelles](https://velcin.github.io/files/HN/representation-textes.pdf)
-- [Les réseaux CNN](https://velcin.github.io/files/deep/CNN-short.pdf)
-- [Les réseaux RNN](https://velcin.github.io/files/deep/RNN-short.pdf)
-- [Les réseaux AE](https://velcin.github.io/files/deep/AE-short.pdf)
-- [Introduction aux grands modèles de langue](https://velcin.github.io/files/HN/LLMs.pdf)
+- [Les réseaux CNN](https://velcin.github.io/files/deep/5-CNN.pdf)
+- [Les réseaux AE](https://velcin.github.io/files/deep/6-AE.pdf)
+- [Les réseaux RNN](https://velcin.github.io/files/deep/7-RNN.pdf)
+- [IA générative et LLMs](https://velcin.github.io/files/deep/8-LLM.pdf)
 
 ## Carnets de note (*notebooks*)
 
