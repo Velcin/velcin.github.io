@@ -48,8 +48,3 @@ Ces ressources sont mises à disposition pour les étudiants inscrits à la form
 
 - mise au point du solution entièrement locale pour utiliser des LLMs : [export html](https://velcin.github.io/files/HN/Ollama.html), [notebook ipynb](https://velcin.github.io/files/HN/Ollama.ipynb)
 
-
-## Eléments supplémentaires
-
-- [Sujet de TD](https://velcin.github.io/files/deep/TD/TD.pdf) avec [Implémentation R](https://velcin.github.io/files/deep/TD/ann.r) et [données](https://velcin.github.io/files/deep/TD/data.csv)
-- [Rétropropagation](https://velcin.github.io/files/deep/TD/backprop.r)
