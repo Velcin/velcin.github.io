@@ -35,7 +35,7 @@ Ces ressources sont mises à disposition pour les étudiants inscrits à la form
 
 - jeu de données de messages toxiques (extrait): [toxic_10k.csv](https://velcin.github.io/files/HN/data/toxic_10k.csv)
 
-- classification de critiques de film à l'aide d'un modèle déjà affiné : [lien google collab]()
+- classification de critiques de film à l'aide d'un modèle déjà affiné : [lien google collab](https://colab.research.google.com/drive/1OzTHco5wCPicjLCmAWIy8qaJZz3dRf3r?usp=sharing)
 
 - prédiction de mots masqués avec CamemBERTa : [lien google collab](https://colab.research.google.com/drive/1_79HH-HL94ctMgjv56qngdBoyw0q3_1P?usp=sharing)
 
