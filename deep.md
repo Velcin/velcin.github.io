@@ -15,6 +15,7 @@ Ces ressources sont mises à disposition pour les étudiants inscrits à la form
 - [Les réseaux AE](https://velcin.github.io/files/deep/6-AE.pdf)
 - [Les réseaux RNN](https://velcin.github.io/files/deep/7-RNN.pdf)
 - [IA générative et LLMs](https://velcin.github.io/files/deep/8-LLM.pdf)
+- [IA et LLMs (plus de détails)](https://velcin.github.io/files/deep/8b-LLM.pdf)
 
 ## Carnets de note (*notebooks*)
 
